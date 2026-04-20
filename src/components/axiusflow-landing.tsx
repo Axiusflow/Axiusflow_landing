@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
 import { NoiseBackground } from "@/components/ui/noise-background";
 import { BentoDemo } from "@/components/bento-demo";
+import { FAQSection } from "@/components/faq-section";
 import { Component as FlickeringFooter } from "@/components/flickering-footer";
 
 function subscribe() {
@@ -223,6 +224,8 @@ export function AxiusflowLandingPage() {
             <BentoDemo />
           </div>
         </section>
+
+        <FAQSection />
 
         <FlickeringFooter />
       </main>

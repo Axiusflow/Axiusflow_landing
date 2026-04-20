@@ -1100,7 +1100,7 @@ export const siteConfig = {
         { id: 1, title: "About", url: "#" },
         { id: 2, title: "Contact", url: "#" },
         { id: 3, title: "Blog", url: "#" },
-        { id: 4, title: "Story", url: "#" },
+        { id: 4, title: "Story", url: "/story" },
       ],
     },
     {
