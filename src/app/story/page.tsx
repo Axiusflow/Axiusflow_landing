@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
+import { Component as Footer } from "@/components/footer";
 
 function subscribe() {
   return () => {};
@@ -222,14 +223,8 @@ export default function StoryPage() {
         </article>
       </main>
 
-      {/* Simple Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="mx-auto max-w-[720px] px-6 text-center">
-          <p className="text-[14px] af-text-secondary">
-            © {new Date().getFullYear()} Axiusflow. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

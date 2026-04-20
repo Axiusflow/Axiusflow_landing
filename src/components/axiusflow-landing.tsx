@@ -9,7 +9,7 @@ import { useSyncExternalStore } from "react";
 import { NoiseBackground } from "@/components/ui/noise-background";
 import { BentoDemo } from "@/components/bento-demo";
 import { FAQSection } from "@/components/faq-section";
-import { Component as FlickeringFooter } from "@/components/flickering-footer";
+import { Component as Footer } from "@/components/footer";
 
 function subscribe() {
   return () => {};
@@ -148,26 +148,16 @@ export function AxiusflowLandingPage() {
 
             {/* Hero Image */}
             <div className="mx-auto mt-14 max-w-[1380px] px-4 sm:px-6">
-              <NoiseBackground
-                containerClassName="rounded-xl p-[6px]"
-                gradientColors={[
-                  "rgb(185, 152, 250)",
-                  "rgb(255, 221, 110)",
-                  "rgb(232, 188, 229)",
-                ]}
-                noiseIntensity={0.15}
-              >
-                <div className="overflow-hidden rounded-[10px] bg-white dark:bg-black">
-                  <Image
-                    src="/hero_image.png"
-                    alt="Axiusflow platform hero preview"
-                    width={1600}
-                    height={900}
-                    priority
-                    className="h-auto w-full"
-                  />
-                </div>
-              </NoiseBackground>
+              <div className="overflow-hidden rounded-[10px]">
+                <Image
+                  src="/hero_image.png"
+                  alt="Axiusflow platform hero preview"
+                  width={1600}
+                  height={900}
+                  priority
+                  className="h-auto w-full"
+                />
+              </div>
             </div>
           </section>
         </div>
@@ -227,7 +217,7 @@ export function AxiusflowLandingPage() {
 
         <FAQSection />
 
-        <FlickeringFooter />
+        <Footer />
       </main>
     </div>
   );

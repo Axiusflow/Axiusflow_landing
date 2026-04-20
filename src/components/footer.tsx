@@ -1098,7 +1098,7 @@ export const siteConfig = {
       title: "Company",
       links: [
         { id: 1, title: "About", url: "#" },
-        { id: 2, title: "Contact", url: "#" },
+        { id: 2, title: "Contact", url: "/contact" },
         { id: 3, title: "Blog", url: "#" },
         { id: 4, title: "Story", url: "/story" },
       ],
@@ -1106,10 +1106,10 @@ export const siteConfig = {
     {
       title: "Products",
       links: [
-        { id: 5, title: "Company", url: "#" },
-        { id: 6, title: "Product", url: "#" },
-        { id: 7, title: "Press", url: "#" },
-        { id: 8, title: "More", url: "#" },
+        { id: 5, title: "Features", url: "#" },
+        { id: 6, title: "Pricing", url: "/pricing" },
+        { id: 7, title: "Integrations", url: "#" },
+        { id: 8, title: "Changelog", url: "#" },
       ],
     },
     {
