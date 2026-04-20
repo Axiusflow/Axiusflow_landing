@@ -74,7 +74,7 @@ export function AxiusflowLandingPage() {
 
       <main className="px-[8px] md:px-[10px]">
         {/* The Hero Container */}
-        <div className="relative mx-auto w-full max-w-[1740px]">
+        <div className="relative isolate mx-auto w-full max-w-[1740px]">
           
           {/* Hero Content */}
           <section className="relative z-10 pt-14 pb-[84px] lg:pt-[70px] lg:pb-[128px]">
