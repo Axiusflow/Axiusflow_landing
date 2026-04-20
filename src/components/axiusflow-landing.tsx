@@ -159,7 +159,7 @@ export function AxiusflowLandingPage() {
                 ]}
                 noiseIntensity={0.15}
               >
-                <div className="overflow-hidden rounded-[10px] bg-white dark:bg-neutral-900">
+                <div className="overflow-hidden rounded-[10px] bg-white dark:bg-black">
                   <Image
                     src="/hero_image.png"
                     alt="Axiusflow platform hero preview"
