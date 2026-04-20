@@ -191,7 +191,7 @@ export function AxiusflowLandingPage() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="font-display mx-auto max-w-[980px] text-[clamp(42px,4.7vw,68px)] font-medium leading-[0.98] tracking-[-0.035em] af-text-primary transition-colors"
               >
-                Advanced Charting & Analytics<br />Built for Serious Traders
+                Advanced Charting & Trading Analytics<br />Built for Serious Traders
               </motion.h1>
 
               {/* Subheadline */}
@@ -201,7 +201,7 @@ export function AxiusflowLandingPage() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="mx-auto mt-6 max-w-[640px] text-[18px] leading-[1.5] af-text-secondary transition-colors"
               >
-                Axiusflow delivers real-time market data, professional charting<br />tools, and seamless broker integrations—all in one platform.
+                Axiusflow delivers real-time market data, professional charting tools, in-depth technical analysis, and seamless broker integrations—all in one high-performance cloud platform.
               </motion.p>
 
               {/* CTA Button */}
@@ -249,9 +249,9 @@ export function AxiusflowLandingPage() {
         {/* Logo Cloud - Trusted Integrations */}
         <section className="af-page-bg pb-24 pt-8 transition-colors duration-300 lg:pt-10">
           <div className="mx-auto max-w-[1000px] px-6">
-            <p className="mb-8 text-center text-[14px] font-medium uppercase tracking-wider af-text-secondary">
-              Trusted integrations with leading brokers
-            </p>
+            <h2 className="mb-8 text-center text-[14px] font-medium uppercase tracking-wider af-text-secondary">
+              Trusted integrations with leading brokers & trading platforms
+            </h2>
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8">
               <Image src="/broker_logo/tradingview.png" alt="TradingView" width={120} height={40} className="h-8 w-auto object-contain opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0 dark:invert dark:hover:invert-0" />
               <Image src="/broker_logo/Ibkr.png" alt="Interactive Brokers" width={120} height={40} className="h-8 w-auto object-contain opacity-70 grayscale transition-all hover:opacity-100 hover:grayscale-0 dark:invert dark:hover:invert-0" />
@@ -276,12 +276,12 @@ export function AxiusflowLandingPage() {
                 </span>
               </div>
               <h2 className="font-display text-[clamp(28px,3.5vw,44px)] font-semibold leading-[1.1] tracking-[-0.02em] af-text-primary">
-                Why Axiusflow?
+                Why Choose Axiusflow for Trading?
               </h2>
               <p className="mx-auto mt-4 max-w-[680px] text-[16px] leading-[1.6] af-text-secondary">
-                Whether you're a day trader, swing trader, or long-term investor, 
-                Axiusflow provides professional-grade tools to analyze markets, execute 
-                trades, and manage your portfolio with confidence.
+                Whether you're a day trader analyzing tick data, a swing trader looking for setups, or a long-term investor, 
+                Axiusflow provides the professional-grade charting tools to analyze markets, execute 
+                trades, and seamlessly manage your trading journal with confidence.
               </p>
             </div>
 
