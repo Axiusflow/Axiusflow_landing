@@ -60,12 +60,12 @@ function IntegrationsVisual() {
       className="relative w-full h-full flex items-center justify-center p-4"
     >
       {/* Left column - 3 brokers */}
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-6">
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-10">
         {brokers.slice(0, 3).map((broker, i) => (
           <div
             key={broker.name}
             ref={brokerRefs[i]}
-            className="w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-white/90 shadow-md overflow-hidden p-1.5"
+            className="w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-white/90 overflow-hidden p-1.5"
             title={broker.name}
           >
             <Image
@@ -94,12 +94,12 @@ function IntegrationsVisual() {
       </div>
 
       {/* Right column - 3 brokers */}
-      <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-6">
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-10">
         {brokers.slice(3, 6).map((broker, i) => (
           <div
             key={broker.name}
             ref={brokerRefs[i + 3]}
-            className="w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-white/90 shadow-md overflow-hidden p-1.5"
+            className="w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-white/90 overflow-hidden p-1.5"
             title={broker.name}
           >
             <Image
