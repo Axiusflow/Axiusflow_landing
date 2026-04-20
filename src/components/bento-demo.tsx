@@ -1,6 +1,9 @@
 "use client";
 
+import { useRef } from "react";
+import Image from "next/image";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import { AnimatedBeam } from "@/components/ui/animated-beam";
 import { 
   Calendar, 
   Globe, 
@@ -11,30 +14,174 @@ import {
   Layers,
   Timer
 } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+// Broker icons as simple text badges for now
+const brokers = [
+  { name: "IB", label: "Interactive Brokers", color: "bg-red-500" },
+  { name: "TD", label: "TD Ameritrade", color: "bg-green-600" },
+  { name: "FD", label: "Fidelity", color: "bg-emerald-500" },
+  { name: "SC", label: "Schwab", color: "bg-blue-600" },
+  { name: "ET", label: "E*TRADE", color: "bg-purple-600" },
+  { name: "RH", label: "Robinhood", color: "bg-yellow-500" },
+];
+
+// Circle component for the beam nodes
+const Circle = ({ className, children, ref }: { className?: string; children?: React.ReactNode; ref?: React.RefObject<HTMLDivElement | null> }) => {
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        "z-10 flex items-center justify-center rounded-full border-2 border-gray-200 dark:border-white/20 bg-white dark:bg-white/10 shadow-md",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
 
 // Card Visual Components
 function IntegrationsVisual() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const centerRef = useRef<HTMLDivElement>(null);
+  const broker1Ref = useRef<HTMLDivElement>(null);
+  const broker2Ref = useRef<HTMLDivElement>(null);
+  const broker3Ref = useRef<HTMLDivElement>(null);
+  const broker4Ref = useRef<HTMLDivElement>(null);
+  const broker5Ref = useRef<HTMLDivElement>(null);
+  const broker6Ref = useRef<HTMLDivElement>(null);
+
+  const brokerRefs = [broker1Ref, broker2Ref, broker3Ref, broker4Ref, broker5Ref, broker6Ref];
+
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
-      <div className="relative w-48 h-48">
-        {/* Map background */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-950/30 dark:to-indigo-950/30 opacity-50" />
-        {/* Floating icons */}
-        <div className="absolute top-4 left-4 w-10 h-10 rounded-lg bg-white dark:bg-white/10 shadow-sm flex items-center justify-center">
-          <Calendar className="w-5 h-5 text-blue-500" />
-        </div>
-        <div className="absolute top-4 right-4 w-10 h-10 rounded-lg bg-white dark:bg-white/10 shadow-sm flex items-center justify-center">
-          <Globe className="w-5 h-5 text-green-500" />
-        </div>
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-lg bg-blue-500 shadow-sm flex items-center justify-center">
-          <Layers className="w-5 h-5 text-white" />
-        </div>
-        {/* Connection lines */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 192 192">
-          <line x1="48" y1="48" x2="96" y2="144" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-white/20" strokeDasharray="4 4" />
-          <line x1="144" y1="48" x2="96" y2="144" stroke="currentColor" strokeWidth="1" className="text-gray-300 dark:text-white/20" strokeDasharray="4 4" />
-        </svg>
+    <div 
+      ref={containerRef} 
+      className="relative w-full h-full flex items-center justify-center p-4"
+    >
+      {/* Left column - 3 brokers */}
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-6">
+        {brokers.slice(0, 3).map((broker, i) => (
+          <div
+            key={broker.name}
+            ref={brokerRefs[i]}
+            className={cn(
+              "w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-md",
+              broker.color
+            )}
+            title={broker.label}
+          >
+            {broker.name}
+          </div>
+        ))}
       </div>
+
+      {/* Center - Axiusflow Logo */}
+      <div
+        ref={centerRef}
+        className="relative z-20 w-16 h-16 rounded-full bg-blue-500 border-2 border-blue-600 shadow-lg flex items-center justify-center overflow-hidden"
+      >
+        <Image
+          src="/brand/logo_transparent.svg"
+          alt="Axiusflow"
+          width={40}
+          height={40}
+          className="w-10 h-10 object-contain"
+        />
+      </div>
+
+      {/* Right column - 3 brokers */}
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-6">
+        {brokers.slice(3, 6).map((broker, i) => (
+          <div
+            key={broker.name}
+            ref={brokerRefs[i + 3]}
+            className={cn(
+              "w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-md",
+              broker.color
+            )}
+            title={broker.label}
+          >
+            {broker.name}
+          </div>
+        ))}
+      </div>
+
+      {/* Animated Beams - Left side */}
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={broker1Ref}
+        toRef={centerRef}
+        curvature={-40}
+        duration={3}
+        delay={0}
+        pathColor="gray"
+        pathOpacity={0.1}
+        gradientStartColor="#3b82f6"
+        gradientStopColor="#8b5cf6"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={broker2Ref}
+        toRef={centerRef}
+        curvature={0}
+        duration={3}
+        delay={0.5}
+        pathColor="gray"
+        pathOpacity={0.1}
+        gradientStartColor="#10b981"
+        gradientStopColor="#3b82f6"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={broker3Ref}
+        toRef={centerRef}
+        curvature={40}
+        duration={3}
+        delay={1}
+        pathColor="gray"
+        pathOpacity={0.1}
+        gradientStartColor="#f59e0b"
+        gradientStopColor="#ef4444"
+      />
+
+      {/* Animated Beams - Right side (reverse) */}
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={broker4Ref}
+        curvature={40}
+        duration={3}
+        delay={0.25}
+        pathColor="gray"
+        pathOpacity={0.1}
+        gradientStartColor="#8b5cf6"
+        gradientStopColor="#ec4899"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={broker5Ref}
+        curvature={0}
+        duration={3}
+        delay={0.75}
+        pathColor="gray"
+        pathOpacity={0.1}
+        gradientStartColor="#3b82f6"
+        gradientStopColor="#06b6d4"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={broker6Ref}
+        curvature={-40}
+        duration={3}
+        delay={1.25}
+        pathColor="gray"
+        pathOpacity={0.1}
+        gradientStartColor="#eab308"
+        gradientStopColor="#22c55e"
+      />
     </div>
   );
 }
