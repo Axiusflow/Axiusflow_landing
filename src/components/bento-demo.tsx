@@ -232,16 +232,16 @@ function TimezoneVisual() {
           <Globe className="w-16 h-16 text-gray-300 dark:text-white/20" strokeWidth={0.5} />
         </div>
         {/* Timezone badges */}
-        <div className="absolute -top-2 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gray-100 dark:bg-white/10 text-xs font-medium af-text-secondary">
+        <div className="absolute -top-2 left-1/2 -translate-x-1/2 px-3 py-1 rounded-[8px] bg-gray-100 dark:bg-white/10 text-xs font-medium af-text-secondary">
           IST
         </div>
-        <div className="absolute top-1/2 -translate-y-1/2 -left-4 px-2 py-1 rounded-lg bg-white dark:bg-white/10 shadow-sm text-xs af-text-primary">
+        <div className="absolute top-1/2 -translate-y-1/2 -left-4 px-2 py-1 rounded-[8px] bg-white dark:bg-white/10 text-xs af-text-primary">
           EST
         </div>
-        <div className="absolute top-1/2 -translate-y-1/2 -right-4 px-2 py-1 rounded-lg bg-white dark:bg-white/10 shadow-sm text-xs af-text-primary">
+        <div className="absolute top-1/2 -translate-y-1/2 -right-4 px-2 py-1 rounded-[8px] bg-white dark:bg-white/10 text-xs af-text-primary">
           PST
         </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 rounded-lg bg-blue-500 text-white text-xs font-medium shadow-md">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 rounded-[8px] bg-blue-500 text-white text-xs font-medium">
           12:00 PM
         </div>
       </div>
@@ -257,7 +257,7 @@ function RemindersVisual() {
           <Bell className="w-4 h-4 af-text-secondary" />
           <span className="text-sm font-medium af-text-primary">Email Reminders</span>
         </div>
-        <button className="text-xs px-3 py-1 rounded-full border border-gray-200 dark:border-white/10 af-text-secondary">
+        <button className="text-xs px-3 py-1 rounded-[8px] border border-gray-200 dark:border-white/10 af-text-secondary">
           + Add Reminder
         </button>
       </div>
@@ -348,7 +348,7 @@ function DurationVisual() {
       {['30 minutes', '60 minutes', '15 min', 'Custom', '30 min', '15 minutes', '10 hours'].map((duration, i) => (
         <span 
           key={i} 
-          className={`px-3 py-1.5 rounded-full text-xs font-medium ${
+          className={`px-3 py-1.5 rounded-[8px] text-xs font-medium ${
             duration === 'Custom' 
               ? 'bg-gray-900 text-white dark:bg-white dark:text-black' 
               : 'border border-gray-200 dark:border-white/10 af-text-secondary'

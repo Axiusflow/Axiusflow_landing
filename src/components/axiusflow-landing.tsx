@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ChevronDown, Moon, Sun, Layers } from "lucide-react";
+import { ArrowRight, Moon, Sun, Layers } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -40,14 +40,14 @@ export function AxiusflowLandingPage() {
             </div>
 
             <nav className="hidden items-center gap-2 md:flex">
-              <Link href="#" className="flex items-center gap-1.5 rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
-                Product <ChevronDown className="h-4 w-4 af-text-secondary transition-colors" />
-              </Link>
-              <Link href="#" className="flex items-center gap-1.5 rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
-                Solutions <ChevronDown className="h-4 w-4 af-text-secondary transition-colors" />
-              </Link>
-              <Link href="#" className="rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
+              <Link href="/pricing" className="rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
                 Pricing
+              </Link>
+              <Link href="/changelog" className="rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
+                Changelog
+              </Link>
+              <Link href="/story" className="rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
+                Story
               </Link>
             </nav>
           </div>
@@ -89,7 +89,7 @@ export function AxiusflowLandingPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="mb-7 inline-flex items-center gap-2 rounded-full border border-gray-200/80 bg-white/85 px-4 py-1.5 shadow-sm backdrop-blur-sm dark:border-white/10 dark:bg-white/5"
+                className="mb-7 inline-flex items-center gap-2 rounded-[8px] border border-gray-200/80 bg-white/85 px-4 py-1.5 backdrop-blur-sm dark:border-white/10 dark:bg-white/5"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="af-text-secondary transition-colors">
                   <path d="M3 11l18-5v12L3 14v-3z" />
@@ -195,7 +195,7 @@ export function AxiusflowLandingPage() {
           <div className="mx-auto max-w-[1240px] px-6">
             {/* Centered Header */}
             <div className="mb-12 text-center lg:mb-16">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gray-200/80 bg-gray-50/80 px-4 py-1.5 dark:border-white/10 dark:bg-white/5">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-[8px] border border-gray-200/80 bg-gray-50/80 px-4 py-1.5 dark:border-white/10 dark:bg-white/5">
                 <Layers className="h-4 w-4 af-text-secondary" />
                 <span className="text-[13px] font-medium af-text-secondary">
                   One Stop Solution

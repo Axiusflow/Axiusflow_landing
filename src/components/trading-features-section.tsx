@@ -131,7 +131,7 @@ export function TradingFeaturesSection() {
                 type="button"
                 onClick={() => setActiveTab(tab.key)}
                 className={cn(
-                  "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium transition-colors",
+                  "inline-flex items-center gap-1.5 rounded-[8px] px-4 py-2 text-xs font-medium transition-colors",
                   activeTab === tab.key
                     ? "bg-white/90 text-black"
                     : "af-text-secondary hover:bg-white/10 hover:text-white",
@@ -168,7 +168,7 @@ export function TradingFeaturesSection() {
                     {activePanel.description}
                   </p>
                 </div>
-                <span className="inline-flex rounded-full border border-sky-200/40 bg-sky-500/15 px-3 py-1 text-xs font-medium text-sky-100">
+                <span className="inline-flex rounded-[8px] border border-sky-200/40 bg-sky-500/15 px-3 py-1 text-xs font-medium text-sky-100">
                   {activePanel.badge}
                 </span>
               </div>

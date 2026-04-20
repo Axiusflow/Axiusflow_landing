@@ -169,7 +169,7 @@ export default function ChangelogPage() {
                 {/* Left column - Tag and Date */}
                 <div className="flex flex-col items-start gap-2">
                   <span
-                    className={`inline-flex whitespace-nowrap rounded-full px-3 py-1 text-[13px] font-medium ${tagColors[entry.tag].bg} ${tagColors[entry.tag].text}`}
+                    className={`inline-flex whitespace-nowrap rounded-[8px] px-3 py-1 text-[13px] font-medium ${tagColors[entry.tag].bg} ${tagColors[entry.tag].text}`}
                   >
                     {entry.tag}
                   </span>

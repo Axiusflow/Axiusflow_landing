@@ -72,7 +72,7 @@ export function FAQSection() {
       <div className="mx-auto max-w-[800px] px-6">
         {/* Header */}
         <div className="mb-12 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border af-surface-bg px-4 py-1.5">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-[8px] border border-border af-surface-bg px-4 py-1.5">
             <HelpCircle className="h-4 w-4 af-text-secondary" />
             <span className="text-[13px] font-medium af-text-secondary">
               FAQ'S
