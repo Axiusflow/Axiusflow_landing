@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -93,6 +94,26 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} ${inter.variable} h-full scroll-smooth antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col">
+        {/* Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-1T17567X8V`}
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1T17567X8V', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
