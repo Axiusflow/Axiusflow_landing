@@ -1,8 +1,5 @@
-import { ArrowRightIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
-import { type ComponentPropsWithoutRef, type ReactNode } from "react";
-
 import { cn } from "@/lib/utils";
+import { type ComponentPropsWithoutRef, type ReactNode } from "react";
 
 interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
   children: ReactNode;
@@ -10,19 +7,16 @@ interface BentoGridProps extends ComponentPropsWithoutRef<"div"> {
 }
 
 interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
-  name: string;
-  className?: string;
-  background?: ReactNode;
+  title: string;
   description: string;
+  className?: string;
+  children?: ReactNode;
 }
 
 const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
   return (
     <div
-      className={cn(
-        "grid w-full grid-cols-1 gap-4 lg:auto-rows-[26rem] lg:grid-cols-3",
-        className,
-      )}
+      className={cn("grid w-full gap-5", className)}
       {...props}
     >
       {children}
@@ -31,26 +25,31 @@ const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
 };
 
 const BentoCard = ({
-  name,
-  className,
-  background,
+  title,
   description,
+  className,
+  children,
   ...props
 }: BentoCardProps) => {
   return (
     <div
-      key={name}
       className={cn(
-        "group relative col-span-1 flex min-h-[24rem] flex-col overflow-hidden rounded-lg bg-[#050505]",
-        className,
+        "group relative flex flex-col overflow-hidden rounded-lg bg-[#F5F5F5] dark:bg-white/5",
+        className
       )}
       {...props}
     >
-      {background && <div className="absolute inset-0">{background}</div>}
+      {/* Visual Content Area */}
+      <div className="relative flex-1 min-h-[280px] flex items-center justify-center p-6 overflow-hidden">
+        {children}
+      </div>
 
-      <div className="relative z-10 mt-auto p-5 sm:p-6">
-        <p className="text-sm leading-relaxed text-neutral-400 sm:text-base">
-          <span className="mr-1.5 font-semibold text-white">{name}.</span>
+      {/* Text Content */}
+      <div className="p-5 pt-0">
+        <h3 className="text-lg font-semibold tracking-tight af-text-primary">
+          {title}
+        </h3>
+        <p className="mt-1.5 text-sm leading-relaxed af-text-secondary">
           {description}
         </p>
       </div>

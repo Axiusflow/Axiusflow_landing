@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ChevronDown, Moon, Sun } from "lucide-react";
+import { ArrowRight, ChevronDown, Moon, Sun, Layers } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -200,18 +200,23 @@ export function AxiusflowLandingPage() {
           </div>
         </section>
 
-        <section className="af-page-bg pb-16 pt-6 transition-colors duration-300 lg:pb-20">
+        <section className="af-page-bg pb-16 pt-6 transition-colors duration-300 lg:pb-24 lg:pt-16">
           <div className="mx-auto max-w-[1240px] px-6">
-            <div className="mb-6 max-w-[700px] text-left lg:mb-8">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.14em] af-text-secondary">
-                Product Features
-              </p>
-              <h2 className="font-display mt-2 text-[clamp(22px,2.3vw,32px)] font-semibold leading-[1.12] tracking-[-0.01em] af-text-primary">
-                Everything your team needs in one workspace
+            {/* Centered Header */}
+            <div className="mb-12 text-center lg:mb-16">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gray-200/80 bg-gray-50/80 px-4 py-1.5 dark:border-white/10 dark:bg-white/5">
+                <Layers className="h-4 w-4 af-text-secondary" />
+                <span className="text-[13px] font-medium af-text-secondary">
+                  One Stop Solution
+                </span>
+              </div>
+              <h2 className="font-display text-[clamp(28px,3.5vw,44px)] font-semibold leading-[1.1] tracking-[-0.02em] af-text-primary">
+                Why Axiusflow?
               </h2>
-              <p className="mt-2 max-w-[620px] text-[15px] leading-[1.45] af-text-secondary">
-                Move faster with intelligent tooling for file management, search,
-                collaboration, and notifications.
+              <p className="mx-auto mt-4 max-w-[680px] text-[16px] leading-[1.6] af-text-secondary">
+                Whether you run a one-person studio or a large company with hundreds of staff, 
+                Axiusflow is designed to help you source, engage, and hire through an 
+                easy-to-setup intelligent platform.
               </p>
             </div>
 
