@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+:root {
+  --token-bg-page: #ffffff;
+  --token-surface: #ffffff;
+  --token-surface-muted: #f9fafb;
+  --token-text-primary: #333333;
+  --token-text-secondary: #7b7b7b;
+  --token-text-on-dark: #ffffff;
+  --token-text-on-light: #0a0a0a;
+  --token-cta-bg: #c7f1fc;
+  --token-cta-bg-hover: #b0e8f7;
+  --token-nav-hover: #f9fafb;
+  --token-header-cta-bg: #333333;
+  --token-header-cta-bg-hover: #000000;
+  --token-header-cta-text: #ffffff;
+  --token-hero-cta-text: #333333;
+}
+
+.dark {
+  --token-bg-page: #0a0a0a;
+  --token-surface: #111111;
+  --token-surface-muted: #1a1a1a;
+  --token-text-primary: #f7f7f7;
+  --token-text-secondary: #ebebeb;
+  --token-text-on-dark: #ffffff;
+  --token-text-on-light: #0a0a0a;
+  --token-cta-bg: #c7f1fc;
+  --token-cta-bg-hover: #b0e8f7;
+  --token-nav-hover: rgba(255, 255, 255, 0.1);
+  --token-header-cta-bg: #ffffff;
+  --token-header-cta-bg-hover: #e5e7eb;
+  --token-header-cta-text: #0a0a0a;
+  --token-hero-cta-text: #1a1a1a;
+}
+
+@theme inline {
+  --color-background: var(--token-bg-page);
+  --color-foreground: var(--token-text-primary);
+  --color-surface: var(--token-surface);
+  --color-surface-muted: var(--token-surface-muted);
+  --color-text-primary: var(--token-text-primary);
+  --color-text-secondary: var(--token-text-secondary);
+  --color-text-on-dark: var(--token-text-on-dark);
+  --color-text-on-light: var(--token-text-on-light);
+  --color-cta-bg: var(--token-cta-bg);
+  --color-cta-bg-hover: var(--token-cta-bg-hover);
+  --color-nav-hover: var(--token-nav-hover);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  background: var(--token-bg-page);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--token-bg-page);
+  color: var(--token-text-primary);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-geist), system-ui, sans-serif;
+}
+
+.af-page-bg {
+  background-color: var(--token-bg-page);
+}
+
+.af-surface-bg {
+  background-color: var(--token-surface);
+}
+
+.af-surface-muted-bg {
+  background-color: var(--token-surface-muted);
+}
+
+.af-text-primary {
+  color: var(--token-text-primary);
+}
+
+.af-text-secondary {
+  color: var(--token-text-secondary);
+}
+
+.af-text-on-dark {
+  color: var(--token-text-on-dark);
+}
+
+.af-text-on-light {
+  color: var(--token-text-on-light);
+}
+
+.af-bg-text-primary {
+  background-color: var(--token-text-primary);
+}
+
+.af-border-text-primary {
+  border-color: var(--token-text-primary);
+}
+
+.af-nav-hover:hover {
+  background-color: var(--token-nav-hover);
+}
+
+.af-header-cta {
+  background-color: var(--token-header-cta-bg);
+  color: var(--token-header-cta-text);
+}
+
+.af-header-cta:hover {
+  background-color: var(--token-header-cta-bg-hover);
+}
+
+.af-hero-cta {
+  background-color: var(--token-cta-bg);
+  color: var(--token-hero-cta-text);
+}
+
+.af-hero-cta:hover {
+  background-color: var(--token-cta-bg-hover);
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+@keyframes accordion-down {
+  from { height: 0; opacity: 0; }
+  to { height: var(--radix-accordion-content-height); opacity: 1; }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); opacity: 1; }
+  to { height: 0; opacity: 0; }
+}
+
+.faq-answer[data-state="open"] {
+  animation: accordion-down 200ms ease-out;
+}
+
+.faq-answer[data-state="closed"] {
+  animation: accordion-up 150ms ease-out;
+}
