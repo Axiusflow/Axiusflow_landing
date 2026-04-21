@@ -232,7 +232,7 @@ export default function PrivacyPage() {
 
             <section>
               <h2 className="font-display mb-4 text-[22px] font-semibold tracking-[-0.02em] af-text-primary">
-                8. Children's Privacy
+                8. Children&apos;s Privacy
               </h2>
               <p className="text-[15px] leading-[1.8] af-text-secondary">
                 Our Services are not intended for individuals under the age of 18. We do not knowingly 

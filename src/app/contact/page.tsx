@@ -1,6 +1,7 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { Tick02Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import Link from "next/link";
 import { useState } from "react";
 import { Component as Footer } from "@/components/footer";
@@ -56,7 +57,7 @@ export default function ContactPage() {
               <ul className="space-y-4 mb-8">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <Check className="h-5 w-5 text-[#7c3aed] dark:text-[#a78bfa] mt-0.5 flex-shrink-0" />
+                    <HugeiconsIcon icon={Tick02Icon} className="h-5 w-5 text-[#7c3aed] dark:text-[#a78bfa] mt-0.5 flex-shrink-0" />
                     <span className="text-[15px] af-text-primary">{benefit}</span>
                   </li>
                 ))}

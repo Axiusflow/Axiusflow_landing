@@ -1,9 +1,9 @@
 "use client";
 
-import { ChevronRightIcon } from "@radix-ui/react-icons";
+import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { ClassValue, clsx } from "clsx";
 import * as Color from "color-bits";
-import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -1170,7 +1170,7 @@ export const Component = () => {
                   >
                     <Link href={link.url}>{link.title}</Link>
                     <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
-                      <ChevronRightIcon className="h-4 w-4 " />
+                      <HugeiconsIcon icon={ArrowRight01Icon} className="h-4 w-4 " />
                     </div>
                   </li>
                 ))}

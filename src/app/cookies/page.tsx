@@ -52,7 +52,7 @@ export default function CookiesPage() {
               <p className="text-[15px] leading-[1.8] af-text-secondary">
                 Cookies are small text files that are placed on your device when you visit a website. They are 
                 widely used to make websites work more efficiently and to provide information to website owners. 
-                Cookies can be "persistent" or "session" cookies.
+                Cookies can be &quot;persistent&quot; or &quot;session&quot; cookies.
               </p>
               <ul className="mt-4 space-y-2 text-[15px] leading-[1.8] af-text-secondary">
                 <li className="flex items-start gap-3">

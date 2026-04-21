@@ -26,7 +26,7 @@ export default function StoryPage() {
               Building the Future of Trading
             </h1>
             <p className="mt-6 text-[18px] leading-[1.7] af-text-secondary">
-              A solo founder's journey to create the centralized trading operating system that traders deserve.
+              A solo founder&apos;s journey to create the centralized trading operating system that traders deserve.
             </p>
           </motion.div>
 
@@ -59,9 +59,9 @@ export default function StoryPage() {
                 The Vision
               </h2>
               <p className="text-[16px] leading-[1.8] af-text-secondary">
-                Hi, I'm Devraj — the founder of Axiusflow. At 19 years old, I set out to solve a problem that 
+                Hi, I&apos;m Devraj — the founder of Axiusflow. At 19 years old, I set out to solve a problem that 
                 every serious trader faces: the fragmentation of trading tools. Charting on one platform, 
-                journaling on another, broker connections scattered everywhere. It's chaos that costs traders 
+                journaling on another, broker connections scattered everywhere. It&apos;s chaos that costs traders 
                 time, money, and mental clarity.
               </p>
               <p className="mt-4 text-[16px] leading-[1.8] af-text-secondary">
@@ -75,10 +75,10 @@ export default function StoryPage() {
             {/* What We're Building */}
             <section>
               <h2 className="font-display mb-4 text-[24px] font-semibold tracking-[-0.02em] af-text-primary">
-                What We're Building
+                What We&apos;re Building
               </h2>
               <p className="text-[16px] leading-[1.8] af-text-secondary">
-                Axiusflow is more than just another trading tool. It's a complete ecosystem that brings together:
+                Axiusflow is more than just another trading tool. It&apos;s a complete ecosystem that brings together:
               </p>
               <ul className="mt-4 space-y-3 text-[16px] leading-[1.8] af-text-secondary">
                 <li className="flex items-start gap-3">
@@ -106,14 +106,14 @@ export default function StoryPage() {
                 Our Promise
               </h2>
               <p className="text-[16px] leading-[1.8] af-text-secondary">
-                I started Axiusflow solo, and I'm building it with one unwavering priority: <strong className="af-text-primary font-medium">smooth 
+                I started Axiusflow solo, and I&apos;m building it with one unwavering priority: <strong className="af-text-primary font-medium">smooth 
                 operation and exceptional user experience</strong>. Every feature, every interaction, every pixel is 
                 designed with the trader in mind. As we scale, this commitment only grows stronger.
               </p>
               <p className="mt-4 text-[16px] leading-[1.8] af-text-secondary">
                 My promise to you is simple: as Axiusflow grows, things will only get better. More features, 
                 more integrations, better performance — all while maintaining the clean, intuitive experience 
-                that traders deserve. This isn't just a product; it's a long-term commitment to the trading community.
+                that traders deserve. This isn&apos;t just a product; it&apos;s a long-term commitment to the trading community.
               </p>
             </section>
 
@@ -124,13 +124,13 @@ export default function StoryPage() {
               </h2>
               <p className="text-[16px] leading-[1.8] af-text-secondary">
                 Transparency matters. Right now, licensing market data from exchanges like CME comes with 
-                substantial costs that are challenging for an early-stage platform. We're being honest about 
+                substantial costs that are challenging for an early-stage platform. We&apos;re being honest about 
                 this because you deserve to know.
               </p>
               <p className="mt-4 text-[16px] leading-[1.8] af-text-secondary">
-                Here's our commitment: <strong className="af-text-primary font-medium">as soon as it becomes financially viable, we will secure 
+                Here&apos;s our commitment: <strong className="af-text-primary font-medium">as soon as it becomes financially viable, we will secure 
                 the proper licenses</strong> to provide you with the highest quality, real-time market data available. 
-                Until then, we're working with the best data sources we can access while building a foundation 
+                Until then, we&apos;re working with the best data sources we can access while building a foundation 
                 that will support premium data feeds in the future.
               </p>
             </section>
@@ -141,11 +141,11 @@ export default function StoryPage() {
                 Join the Journey
               </h2>
               <p className="text-[16px] leading-[1.8] af-text-secondary">
-                Axiusflow is just getting started, and I'd love for you to be part of this journey. Whether 
-                you're a day trader, swing trader, or long-term investor, we're building this for you.
+                Axiusflow is just getting started, and I&apos;d love for you to be part of this journey. Whether 
+                you&apos;re a day trader, swing trader, or long-term investor, we&apos;re building this for you.
               </p>
               <p className="mt-4 text-[16px] leading-[1.8] af-text-secondary">
-                Thank you for believing in what we're creating. Together, we're going to change how traders work.
+                Thank you for believing in what we&apos;re creating. Together, we&apos;re going to change how traders work.
               </p>
               <div className="mt-6 flex items-center gap-3">
                 <span className="text-[14px] af-text-secondary">—</span>

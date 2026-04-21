@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Moon, Sun, Layers, Menu, X } from "lucide-react";
+import {
+  ArrowRight01Icon,
+  Cancel01Icon,
+  Layers01Icon,
+  Menu01Icon,
+  Moon02Icon,
+  Sun01Icon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
@@ -62,9 +70,9 @@ export function AxiusflowLandingPage() {
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (
-                  <Sun className="h-4 w-4" />
+                  <HugeiconsIcon icon={Sun01Icon} className="h-4 w-4" />
                 ) : (
-                  <Moon className="h-4 w-4" />
+                  <HugeiconsIcon icon={Moon02Icon} className="h-4 w-4" />
                 )}
               </button>
             )}
@@ -85,23 +93,23 @@ export function AxiusflowLandingPage() {
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (
-                  <Sun className="h-4 w-4" />
+                  <HugeiconsIcon icon={Sun01Icon} className="h-4 w-4" />
                 ) : (
-                  <Moon className="h-4 w-4" />
+                  <HugeiconsIcon icon={Moon02Icon} className="h-4 w-4" />
                 )}
               </button>
             )}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="flex h-9 w-9 items-center justify-center rounded-[8px] af-text-primary transition-colors af-nav-hover"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </button>
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <HugeiconsIcon icon={Cancel01Icon} className="h-5 w-5" />
+                ) : (
+                  <HugeiconsIcon icon={Menu01Icon} className="h-5 w-5" />
+                )}
+              </button>
           </div>
         </div>
 
@@ -224,7 +232,7 @@ export function AxiusflowLandingPage() {
                     className="inline-flex h-full w-full cursor-pointer items-center gap-2 rounded-full bg-gradient-to-r from-neutral-100 via-neutral-100 to-white px-6 py-2.5 text-[16px] font-medium text-black shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)] transition-all duration-100 active:scale-[0.98] dark:from-black dark:via-black dark:to-neutral-900 dark:text-white dark:shadow-[0px_1px_0px_0px_var(--color-neutral-950)_inset,0px_1px_0px_0px_var(--color-neutral-800)]"
                   >
                     Get Started
-                    <ArrowRight className="h-4 w-4" />
+                    <HugeiconsIcon icon={ArrowRight01Icon} className="h-4 w-4" />
                   </Link>
                 </NoiseBackground>
               </motion.div>
@@ -267,19 +275,19 @@ export function AxiusflowLandingPage() {
 
         <section className="af-page-bg pb-16 pt-6 transition-colors duration-300 lg:pb-24 lg:pt-16">
           <div className="mx-auto max-w-[1240px] px-6">
-            {/* Centered Header */}
-            <div className="mb-12 text-center lg:mb-16">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-[8px] border border-gray-200/80 bg-gray-50/80 px-4 py-1.5 dark:border-white/10 dark:bg-white/5">
-                <Layers className="h-4 w-4 af-text-secondary" />
-                <span className="text-[13px] font-medium af-text-secondary">
-                  One Stop Solution
-                </span>
+              {/* Centered Header */}
+              <div className="mb-12 text-center lg:mb-16">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-[8px] border border-gray-200/80 bg-gray-50/80 px-4 py-1.5 dark:border-white/10 dark:bg-white/5">
+                  <HugeiconsIcon icon={Layers01Icon} className="h-4 w-4 af-text-secondary" />
+                  <span className="text-[13px] font-medium af-text-secondary">
+                    One Stop Solution
+                  </span>
               </div>
               <h2 className="font-display text-[clamp(28px,3.5vw,44px)] font-semibold leading-[1.1] tracking-[-0.02em] af-text-primary">
                 Why Choose Axiusflow for Trading?
               </h2>
               <p className="mx-auto mt-4 max-w-[680px] text-[16px] leading-[1.6] af-text-secondary">
-                Whether you're a day trader analyzing tick data, a swing trader looking for setups, or a long-term investor, 
+                Whether you&apos;re a day trader analyzing tick data, a swing trader looking for setups, or a long-term investor, 
                 Axiusflow provides the professional-grade charting tools to analyze markets, execute 
                 trades, and seamlessly manage your trading journal with confidence.
               </p>

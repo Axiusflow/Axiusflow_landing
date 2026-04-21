@@ -1,6 +1,8 @@
 "use client";
 
 import { Fragment } from "react";
+import { Cancel01Icon, Tick02Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import Link from "next/link";
 import { Component as Footer } from "@/components/footer";
 import { Header } from "@/components/header";
@@ -80,37 +82,19 @@ const featureCategories: FeatureCategory[] = [
   },
 ];
 
-function CheckIcon() {
-  return (
-    <svg
-      className="w-5 h-5 text-emerald-600 dark:text-emerald-400 mx-auto"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-    </svg>
-  );
-}
-
-function XIcon() {
-  return (
-    <svg
-      className="w-5 h-5 text-gray-300 dark:text-gray-600 mx-auto"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  );
-}
-
 function FeatureCell({ value }: { value: FeatureValue }) {
   if (typeof value === "boolean") {
-    return value ? <CheckIcon /> : <XIcon />;
+    return value ? (
+      <HugeiconsIcon
+        icon={Tick02Icon}
+        className="w-5 h-5 text-emerald-600 dark:text-emerald-400 mx-auto"
+      />
+    ) : (
+      <HugeiconsIcon
+        icon={Cancel01Icon}
+        className="w-5 h-5 text-gray-300 dark:text-gray-600 mx-auto"
+      />
+    );
   }
   return <span className="af-text-primary text-sm">{value}</span>;
 }

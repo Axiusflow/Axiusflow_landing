@@ -1,6 +1,11 @@
 "use client";
 
-import { BarChartIcon, LightningBoltIcon, MixerHorizontalIcon } from "@radix-ui/react-icons";
+import {
+  BarChartIcon,
+  SlidersHorizontalIcon,
+  ZapIcon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -112,17 +117,17 @@ export function TradingFeaturesSection() {
                 {
                   key: "charting",
                   label: "Pro Charting",
-                  Icon: BarChartIcon,
+                  icon: BarChartIcon,
                 },
                 {
                   key: "automation",
                   label: "Signal Automation",
-                  Icon: LightningBoltIcon,
+                  icon: ZapIcon,
                 },
                 {
                   key: "risk",
                   label: "Risk Console",
-                  Icon: MixerHorizontalIcon,
+                  icon: SlidersHorizontalIcon,
                 },
               ] as const
             ).map((tab) => (
@@ -137,7 +142,7 @@ export function TradingFeaturesSection() {
                     : "af-text-secondary hover:bg-white/10 hover:text-white",
                 )}
               >
-                <tab.Icon className="h-3.5 w-3.5" />
+                <HugeiconsIcon icon={tab.icon} className="h-3.5 w-3.5" />
                 {tab.label}
               </button>
             ))}

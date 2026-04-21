@@ -42,13 +42,13 @@ export default function TermsPage() {
                 1. Agreement to Terms
               </h2>
               <p className="text-[15px] leading-[1.8] af-text-secondary">
-                By accessing or using Axiusflow's services, website, or applications (collectively, the "Services"), 
-                you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, 
+                By accessing or using Axiusflow&apos;s services, website, or applications (collectively, the &quot;Services&quot;), 
+                you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree to these Terms, 
                 please do not use our Services.
               </p>
               <p className="mt-4 text-[15px] leading-[1.8] af-text-secondary">
                 We reserve the right to modify these Terms at any time. We will notify you of any changes by 
-                posting the new Terms on this page and updating the "Last updated" date. Your continued use 
+                posting the new Terms on this page and updating the &quot;Last updated&quot; date. Your continued use 
                 of the Services after any such changes constitutes your acceptance of the new Terms.
               </p>
             </section>
@@ -155,7 +155,7 @@ export default function TermsPage() {
                 7. Disclaimer of Warranties
               </h2>
               <p className="text-[15px] leading-[1.8] af-text-secondary">
-                THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, 
+                THE SERVICES ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, 
                 EITHER EXPRESS OR IMPLIED. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, 
                 ERROR-FREE, OR COMPLETELY SECURE.
               </p>

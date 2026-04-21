@@ -4,7 +4,9 @@
 
 import * as React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { RiAddLine, RiSubtractLine } from '@remixicon/react';
+import { Add01Icon, Remove01Icon } from '@hugeicons/core-free-icons';
+import { HugeiconsIcon } from '@hugeicons/react';
+import type { IconSvgElement } from '@hugeicons/react';
 
 import { cn } from '@/lib/utils';
 import type { PolymorphicComponentProps } from '@/lib/polymorphic';
@@ -84,21 +86,25 @@ function AccordionIcon<T extends React.ElementType>({
 }
 AccordionIcon.displayName = ACCORDION_ICON_NAME;
 
-type AccordionArrowProps = React.HTMLAttributes<HTMLDivElement> & {
-  openIcon?: React.ElementType;
-  closeIcon?: React.ElementType;
+type AccordionArrowProps = Omit<
+  React.ComponentPropsWithoutRef<typeof HugeiconsIcon>,
+  'icon' | 'altIcon'
+> & {
+  openIcon?: IconSvgElement;
+  closeIcon?: IconSvgElement;
 };
 
 // open/close
 function AccordionArrow({
   className,
-  openIcon: OpenIcon = RiAddLine,
-  closeIcon: CloseIcon = RiSubtractLine,
+  openIcon: OpenIcon = Add01Icon,
+  closeIcon: CloseIcon = Remove01Icon,
   ...rest
 }: AccordionArrowProps) {
   return (
     <>
-      <OpenIcon
+      <HugeiconsIcon
+        icon={OpenIcon}
         className={cn(
           'size-5 af-text-secondary',
           'transition duration-200 ease-out',
@@ -110,7 +116,8 @@ function AccordionArrow({
         )}
         {...rest}
       />
-      <CloseIcon
+      <HugeiconsIcon
+        icon={CloseIcon}
         className={cn(
           'size-5 af-text-primary',
           // close

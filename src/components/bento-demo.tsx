@@ -4,13 +4,13 @@ import { useRef } from "react";
 import Image from "next/image";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
-import { 
-  Globe, 
-  Bell, 
-  Clock, 
-  Layers
-} from "lucide-react";
-import { cn } from "@/lib/utils";
+import {
+  Clock01Icon,
+  GlobeIcon,
+  Layers01Icon,
+  Notification03Icon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 
 // Broker logos from the public folder
 const brokers = [
@@ -21,21 +21,6 @@ const brokers = [
   { name: "Webull", logo: "/broker_logo/webull.png" },
   { name: "NinjaTrader", logo: "/broker_logo/ninjatrader.png" },
 ];
-
-// Circle component for the beam nodes
-const Circle = ({ className, children, ref }: { className?: string; children?: React.ReactNode; ref?: React.RefObject<HTMLDivElement | null> }) => {
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        "z-10 flex items-center justify-center rounded-full border-2 border-gray-200 dark:border-white/20 bg-white dark:bg-white/10 shadow-md",
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-};
 
 // Card Visual Components
 function IntegrationsVisual() {
@@ -238,7 +223,11 @@ function TimezoneVisual() {
       <div className="relative">
         {/* World map dots pattern */}
         <div className="w-56 h-32 rounded-xl bg-gradient-to-r from-gray-100 to-gray-50 dark:from-white/5 dark:to-white/10 flex items-center justify-center">
-          <Globe className="w-16 h-16 text-gray-300 dark:text-white/20" strokeWidth={0.5} />
+          <HugeiconsIcon
+            icon={GlobeIcon}
+            className="w-16 h-16 text-gray-300 dark:text-white/20"
+            strokeWidth={0.5}
+          />
         </div>
         {/* Market session badges */}
         <div className="absolute -top-2 left-1/2 -translate-x-1/2 px-3 py-1 rounded-[8px] bg-emerald-100 dark:bg-emerald-500/20 text-xs font-medium text-emerald-600 dark:text-emerald-400">
@@ -263,7 +252,7 @@ function RemindersVisual() {
     <div className="w-full max-w-[360px] mx-auto rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-4 shadow-sm">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <Bell className="w-4 h-4 af-text-secondary" />
+          <HugeiconsIcon icon={Notification03Icon} className="w-4 h-4 af-text-secondary" />
           <span className="text-sm font-medium af-text-primary">Price Alerts</span>
         </div>
         <button className="text-xs px-3 py-1 rounded-[8px] border border-gray-200 dark:border-white/10 af-text-secondary">
@@ -300,7 +289,7 @@ function TeamMembersVisual() {
   return (
     <div className="w-full max-w-[280px] mx-auto rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-4 shadow-sm">
       <div className="flex items-center gap-2 mb-3">
-        <Layers className="w-4 h-4 af-text-secondary" />
+        <HugeiconsIcon icon={Layers01Icon} className="w-4 h-4 af-text-secondary" />
         <span className="text-sm font-medium af-text-primary">Trading Accounts</span>
       </div>
       <div className="text-xs af-text-secondary mb-2">Connected (3)</div>
@@ -374,7 +363,7 @@ function BlockDatesVisual() {
   return (
     <div className="w-full max-w-[240px] mx-auto rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-4 shadow-sm">
       <div className="flex items-center gap-2 mb-3">
-        <Clock className="w-4 h-4 af-text-secondary" />
+        <HugeiconsIcon icon={Clock01Icon} className="w-4 h-4 af-text-secondary" />
         <span className="text-sm font-medium af-text-primary">Market Sessions</span>
       </div>
       <div className="space-y-2">

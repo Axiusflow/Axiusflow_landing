@@ -1,7 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Moon, Sun, Menu, X, ArrowLeft } from "lucide-react";
+import {
+  ArrowLeft01Icon,
+  Cancel01Icon,
+  Menu01Icon,
+  Moon02Icon,
+  Sun01Icon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
@@ -52,9 +59,9 @@ export function Header({ variant = "full", showGetStarted = true }: HeaderProps)
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (
-                  <Sun className="h-4 w-4" />
+                  <HugeiconsIcon icon={Sun01Icon} className="h-4 w-4" />
                 ) : (
-                  <Moon className="h-4 w-4" />
+                  <HugeiconsIcon icon={Moon02Icon} className="h-4 w-4" />
                 )}
               </button>
             )}
@@ -62,7 +69,7 @@ export function Header({ variant = "full", showGetStarted = true }: HeaderProps)
               href="/"
               className="flex items-center gap-2 rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <HugeiconsIcon icon={ArrowLeft01Icon} className="h-4 w-4" />
               Back
             </Link>
           </div>
@@ -76,23 +83,23 @@ export function Header({ variant = "full", showGetStarted = true }: HeaderProps)
                 aria-label="Toggle theme"
               >
                 {theme === "dark" ? (
-                  <Sun className="h-4 w-4" />
+                  <HugeiconsIcon icon={Sun01Icon} className="h-4 w-4" />
                 ) : (
-                  <Moon className="h-4 w-4" />
+                  <HugeiconsIcon icon={Moon02Icon} className="h-4 w-4" />
                 )}
               </button>
             )}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="flex h-9 w-9 items-center justify-center rounded-[8px] af-text-primary transition-colors af-nav-hover"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </button>
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <HugeiconsIcon icon={Cancel01Icon} className="h-5 w-5" />
+                ) : (
+                  <HugeiconsIcon icon={Menu01Icon} className="h-5 w-5" />
+                )}
+              </button>
           </div>
         </div>
 
@@ -113,7 +120,7 @@ export function Header({ variant = "full", showGetStarted = true }: HeaderProps)
                     className="flex items-center gap-2 rounded-[8px] px-3 py-2.5 text-[15px] font-medium af-text-primary transition-colors af-nav-hover"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    <ArrowLeft className="h-4 w-4" />
+                    <HugeiconsIcon icon={ArrowLeft01Icon} className="h-4 w-4" />
                     Back to Home
                   </Link>
                   <div className="my-2 border-t border-gray-200/50 dark:border-white/10" />
@@ -184,15 +191,15 @@ export function Header({ variant = "full", showGetStarted = true }: HeaderProps)
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="flex h-9 w-9 items-center justify-center rounded-[8px] af-text-secondary transition-colors af-nav-hover"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-4 w-4" />
-              ) : (
-                <Moon className="h-4 w-4" />
-              )}
-            </button>
-          )}
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? (
+                  <HugeiconsIcon icon={Sun01Icon} className="h-4 w-4" />
+                ) : (
+                  <HugeiconsIcon icon={Moon02Icon} className="h-4 w-4" />
+                )}
+              </button>
+            )}
           <Link href="#" className="rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
             Sign in
           </Link>
@@ -212,23 +219,23 @@ export function Header({ variant = "full", showGetStarted = true }: HeaderProps)
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (
-                <Sun className="h-4 w-4" />
+                <HugeiconsIcon icon={Sun01Icon} className="h-4 w-4" />
               ) : (
-                <Moon className="h-4 w-4" />
+                <HugeiconsIcon icon={Moon02Icon} className="h-4 w-4" />
               )}
             </button>
           )}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="flex h-9 w-9 items-center justify-center rounded-[8px] af-text-primary transition-colors af-nav-hover"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </button>
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <HugeiconsIcon icon={Cancel01Icon} className="h-5 w-5" />
+              ) : (
+                <HugeiconsIcon icon={Menu01Icon} className="h-5 w-5" />
+              )}
+            </button>
         </div>
       </div>
 
