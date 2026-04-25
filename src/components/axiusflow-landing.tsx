@@ -161,11 +161,11 @@ export function AxiusflowLandingPage() {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
-              className="border-t border-gray-200/50 dark:border-white/10 md:hidden"
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.16, ease: "easeOut" }}
+              className="absolute inset-x-0 top-full border-t border-gray-200/50 af-page-bg shadow-lg dark:border-white/10 md:hidden"
             >
               <nav className="mx-auto max-w-[1240px] px-6 py-4">
                 <div className="flex flex-col gap-1">
@@ -221,12 +221,7 @@ export function AxiusflowLandingPage() {
             <div className="mx-auto max-w-[1260px] px-6 text-center">
               
               {/* Badge */}
-              <motion.div
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="mb-7 inline-flex items-center gap-2 rounded-[8px] border border-gray-200/80 bg-white/85 px-4 py-1.5 backdrop-blur-sm dark:border-white/10 dark:bg-white/5"
-              >
+              <div className="mb-7 inline-flex items-center gap-2 rounded-[8px] border border-gray-200/80 bg-white/85 px-4 py-1.5 dark:border-white/10 dark:bg-white/5">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="af-text-secondary transition-colors">
                   <path d="M3 11l18-5v12L3 14v-3z" />
                   <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
@@ -234,35 +229,20 @@ export function AxiusflowLandingPage() {
                 <span className="text-[14px] font-medium af-text-secondary transition-colors">
                   Live crypto charts, journal, replay, and AI trade reviews
                 </span>
-              </motion.div>
+              </div>
 
               {/* Headline */}
-              <motion.h1
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="font-display mx-auto max-w-[980px] text-[clamp(42px,4.7vw,68px)] font-medium leading-[0.98] tracking-[-0.035em] af-text-primary transition-colors"
-              >
+              <h1 className="font-display mx-auto max-w-[980px] text-[clamp(42px,4.7vw,68px)] font-medium leading-[0.98] tracking-[-0.035em] af-text-primary transition-colors">
                 Trading Journal, Replay & AI Review<br />Built for Serious Traders
-              </motion.h1>
+              </h1>
 
               {/* Subheadline */}
-              <motion.p
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="mx-auto mt-6 max-w-[640px] text-[18px] leading-[1.5] af-text-secondary transition-colors"
-              >
+              <p className="mx-auto mt-6 max-w-[640px] text-[18px] leading-[1.5] af-text-secondary transition-colors">
                 Axiusflow combines live crypto charting, trade journaling, broker imports, replay, and AI-powered session reviews so active traders can improve without stitching together five tools.
-              </motion.p>
+              </p>
 
               {/* Waitlist form */}
-              <motion.div
-                initial={false}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="mt-8 flex justify-center"
-              >
+              <div className="mt-8 flex justify-center">
                 <form
                   id="waitlist"
                   onSubmit={submitWaitlist}
@@ -289,7 +269,7 @@ export function AxiusflowLandingPage() {
                     <HugeiconsIcon icon={ArrowRight01Icon} className="h-4 w-4" />
                   </button>
                 </form>
-              </motion.div>
+              </div>
               {submissionMessage ? (
                 <p
                   className={`mt-3 text-[14px] ${

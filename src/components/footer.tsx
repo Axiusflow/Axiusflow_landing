@@ -935,21 +935,33 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let animationFrameId: number;
+    let animationFrameId: number | null = null;
     let gridParams: ReturnType<typeof setupCanvas>;
+    const shouldAnimate =
+      flickerChance > 0 &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const updateCanvasSize = () => {
       const newWidth = width || container.clientWidth;
       const newHeight = height || container.clientHeight;
       setCanvasSize({ width: newWidth, height: newHeight });
       gridParams = setupCanvas(canvas, newWidth, newHeight);
+      drawGrid(
+        ctx,
+        canvas.width,
+        canvas.height,
+        gridParams.cols,
+        gridParams.rows,
+        gridParams.squares,
+        gridParams.dpr,
+      );
     };
 
     updateCanvasSize();
 
     let lastTime = 0;
     const animate = (time: number) => {
-      if (!isInView) return;
+      if (!isInView || !shouldAnimate) return;
 
       const deltaTime = (time - lastTime) / 1000;
       lastTime = time;
@@ -982,16 +994,18 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 
     intersectionObserver.observe(canvas);
 
-    if (isInView) {
+    if (isInView && shouldAnimate) {
       animationFrameId = requestAnimationFrame(animate);
     }
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+      }
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
     };
-  }, [setupCanvas, updateSquares, drawGrid, width, height, isInView]);
+  }, [setupCanvas, updateSquares, drawGrid, width, height, isInView, flickerChance]);
 
   return (
     <div
@@ -1180,7 +1194,7 @@ export const Component = () => {
             gridGap={tablet ? 2 : 3}
             color="#6B7280"
             maxOpacity={0.3}
-            flickerChance={0.1}
+            flickerChance={0}
           />
         </div>
       </div>

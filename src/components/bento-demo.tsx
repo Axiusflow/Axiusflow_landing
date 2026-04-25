@@ -1,9 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import { AnimatedBeam } from "@/components/ui/animated-beam";
 import {
   Clock01Icon,
   GlobeIcon,
@@ -23,28 +21,14 @@ const brokers = [
 
 // Card Visual Components
 function IntegrationsVisual() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const centerRef = useRef<HTMLDivElement>(null);
-  const broker1Ref = useRef<HTMLDivElement>(null);
-  const broker2Ref = useRef<HTMLDivElement>(null);
-  const broker3Ref = useRef<HTMLDivElement>(null);
-  const broker4Ref = useRef<HTMLDivElement>(null);
-  const broker5Ref = useRef<HTMLDivElement>(null);
-  const broker6Ref = useRef<HTMLDivElement>(null);
-
-  const brokerRefs = [broker1Ref, broker2Ref, broker3Ref, broker4Ref, broker5Ref, broker6Ref];
-
   return (
-    <div 
-      ref={containerRef} 
-      className="relative w-full h-full flex items-center justify-center p-4"
-    >
+    <div className="relative w-full h-full flex items-center justify-center p-4">
+      <div className="pointer-events-none absolute inset-x-16 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent" />
       {/* Left column - 3 brokers */}
       <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-10">
-        {brokers.slice(0, 3).map((broker, i) => (
+        {brokers.slice(0, 3).map((broker) => (
           <div
             key={broker.name}
-            ref={brokerRefs[i]}
             className="w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-white/90 overflow-hidden p-1.5"
             title={broker.name}
           >
@@ -61,7 +45,6 @@ function IntegrationsVisual() {
 
       {/* Center - Axiusflow Logo */}
       <div
-        ref={centerRef}
         className="relative z-20 w-16 h-16 rounded-full bg-blue-500 border-2 border-blue-600 shadow-lg flex items-center justify-center overflow-hidden"
       >
         <Image
@@ -75,10 +58,9 @@ function IntegrationsVisual() {
 
       {/* Right column - 3 brokers */}
       <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-10">
-        {brokers.slice(3, 6).map((broker, i) => (
+        {brokers.slice(3, 6).map((broker) => (
           <div
             key={broker.name}
-            ref={brokerRefs[i + 3]}
             className="w-10 h-10 rounded-full flex items-center justify-center bg-white dark:bg-white/90 overflow-hidden p-1.5"
             title={broker.name}
           >
@@ -92,82 +74,6 @@ function IntegrationsVisual() {
           </div>
         ))}
       </div>
-
-      {/* Animated Beams - Left side */}
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={broker1Ref}
-        toRef={centerRef}
-        curvature={-40}
-        duration={3}
-        delay={0}
-        pathColor="gray"
-        pathOpacity={0.1}
-        gradientStartColor="#3b82f6"
-        gradientStopColor="#8b5cf6"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={broker2Ref}
-        toRef={centerRef}
-        curvature={0}
-        duration={3}
-        delay={0.5}
-        pathColor="gray"
-        pathOpacity={0.1}
-        gradientStartColor="#10b981"
-        gradientStopColor="#3b82f6"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={broker3Ref}
-        toRef={centerRef}
-        curvature={40}
-        duration={3}
-        delay={1}
-        pathColor="gray"
-        pathOpacity={0.1}
-        gradientStartColor="#f59e0b"
-        gradientStopColor="#ef4444"
-      />
-
-      {/* Animated Beams - Right side (reverse) */}
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={centerRef}
-        toRef={broker4Ref}
-        curvature={40}
-        duration={3}
-        delay={0.25}
-        pathColor="gray"
-        pathOpacity={0.1}
-        gradientStartColor="#8b5cf6"
-        gradientStopColor="#ec4899"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={centerRef}
-        toRef={broker5Ref}
-        curvature={0}
-        duration={3}
-        delay={0.75}
-        pathColor="gray"
-        pathOpacity={0.1}
-        gradientStartColor="#3b82f6"
-        gradientStopColor="#06b6d4"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={centerRef}
-        toRef={broker6Ref}
-        curvature={-40}
-        duration={3}
-        delay={1.25}
-        pathColor="gray"
-        pathOpacity={0.1}
-        gradientStartColor="#eab308"
-        gradientStopColor="#22c55e"
-      />
     </div>
   );
 }
