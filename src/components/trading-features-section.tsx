@@ -180,10 +180,16 @@ export function TradingFeaturesSection() {
 
               <div className="relative h-[360px] w-full sm:h-[420px]">
                 <Image
-                  src="/hero_image.png"
+                  src="/hero_light.png"
                   alt="Trading dashboard preview"
                   fill
-                  className="object-cover"
+                  className="object-cover dark:hidden"
+                />
+                <Image
+                  src="/hero_dark.png"
+                  alt="Trading dashboard preview"
+                  fill
+                  className="hidden object-cover dark:block"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/20" />
                 <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 gap-3 sm:grid-cols-4">

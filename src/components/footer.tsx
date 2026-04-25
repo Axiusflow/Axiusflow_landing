@@ -1145,17 +1145,6 @@ export const Component = () => {
           <p className="tracking-tight text-muted-foreground font-medium">
             {siteConfig.hero.description}
           </p>
-          <div className="flex flex-wrap items-center gap-2">
-            {["Encrypted records", "Scoped broker access", "Trader-owned data"].map((label) => (
-              <span
-                key={label}
-                className="inline-flex items-center gap-1.5 rounded-[8px] border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground"
-              >
-                <Icons.logo className="size-3" />
-                {label}
-              </span>
-            ))}
-          </div>
         </div>
         <div className="pt-5 md:w-1/2">
           <div className="flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between gap-y-5 lg:pl-10">

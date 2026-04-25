@@ -24,7 +24,7 @@ function subscribe() {
 }
 
 export function AxiusflowLandingPage() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, theme, setTheme } = useTheme();
   const mounted = useSyncExternalStore(subscribe, () => true, () => false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [email, setEmail] = useState("");
@@ -32,6 +32,8 @@ export function AxiusflowLandingPage() {
     "idle" | "submitting" | "success" | "error"
   >("idle");
   const [submissionMessage, setSubmissionMessage] = useState("");
+  const heroImageSrc =
+    mounted && resolvedTheme === "dark" ? "/hero_dark.png" : "/hero_light.png";
 
   async function submitWaitlist(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -281,7 +283,7 @@ export function AxiusflowLandingPage() {
                   <button
                     type="submit"
                     disabled={submissionState === "submitting"}
-                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-neutral-950 px-6 text-[15px] font-medium text-white transition-colors hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+                    className="inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-full bg-neutral-950 px-6 text-[15px] font-medium text-white transition-colors hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
                   >
                     {submissionState === "submitting" ? "Submitting" : "Join"}
                     <HugeiconsIcon icon={ArrowRight01Icon} className="h-4 w-4" />
@@ -306,7 +308,7 @@ export function AxiusflowLandingPage() {
             <div className="mx-auto mt-14 max-w-[1380px] px-4 sm:px-6">
               <div className="overflow-hidden rounded-[10px]">
                 <Image
-                  src="/hero_image.png"
+                  src={heroImageSrc}
                   alt="Axiusflow trading journal, live crypto charting, trade replay, and AI review dashboard"
                   width={1600}
                   height={900}
