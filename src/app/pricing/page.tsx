@@ -7,8 +7,7 @@ import Link from "next/link";
 import { Component as Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
-const proCheckoutUrl =
-  "https://test.checkout.dodopayments.com/buy/pdt_0NdVgQXFtTZzoQO9OOdlX?quantity=1";
+const proCheckoutUrl = "https://app.axiusflow.com/pricing?checkout=pro";
 
 const plans = [
   {
