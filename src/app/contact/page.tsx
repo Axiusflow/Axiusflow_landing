@@ -49,7 +49,7 @@ export default function ContactPage() {
                 Contact Sales
               </h1>
               <p className="text-[17px] leading-[1.7] af-text-secondary mb-8">
-                Join the waitlist, request a demo, or tell us which charting, journaling,
+                Request a demo, or tell us which charting, journaling,
                 broker import, and replay workflow you want Axiusflow to support first.
               </p>
 

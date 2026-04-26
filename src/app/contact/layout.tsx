@@ -4,7 +4,7 @@ import { siteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Contact Axiusflow",
   description:
-    "Contact Axiusflow to join the waitlist, request a trading journal demo, discuss broker imports, or share your charting and replay workflow.",
+    "Contact Axiusflow to request a trading journal demo, discuss broker imports, or share your charting and replay workflow.",
   alternates: {
     canonical: `${siteUrl}/contact`,
   },

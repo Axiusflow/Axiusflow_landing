@@ -1098,8 +1098,8 @@ export const siteConfig = {
       "A crypto-first trading workspace for charting, journaling, replay, AI reviews, broker imports, and performance analytics.",
     cta: {
       primary: {
-        text: "Join Waitlist",
-        href: "/#waitlist",
+        text: "Login",
+        href: "https://app.axiusflow.com/login",
       },
       secondary: {
         text: "Contact",

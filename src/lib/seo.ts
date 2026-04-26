@@ -91,6 +91,6 @@ export const faqItems = [
     id: "getting-started",
     question: "How do I get started with Axiusflow?",
     answer:
-      "Join the waitlist or contact the team, share your trading workflow, and we will help you understand whether Axiusflow fits your current charting, journal, and replay needs.",
+      "Login to Axiusflow or contact the team, share your trading workflow, and we will help you understand whether Axiusflow fits your current charting, journal, and replay needs.",
   },
 ];

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import {
   ArrowRight01Icon,
   Cancel01Icon,
@@ -27,51 +27,8 @@ export function AxiusflowLandingPage() {
   const { resolvedTheme, theme, setTheme } = useTheme();
   const mounted = useSyncExternalStore(subscribe, () => true, () => false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [submissionState, setSubmissionState] = useState<
-    "idle" | "submitting" | "success" | "error"
-  >("idle");
-  const [submissionMessage, setSubmissionMessage] = useState("");
   const heroImageSrc =
     mounted && resolvedTheme === "dark" ? "/hero_dark.png" : "/hero_light.png";
-
-  async function submitWaitlist(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    if (!email.trim()) {
-      setSubmissionState("error");
-      setSubmissionMessage("Enter your email.");
-      return;
-    }
-
-    setSubmissionState("submitting");
-    setSubmissionMessage("");
-
-    try {
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const result = (await response.json()) as { error?: string };
-
-      if (!response.ok) {
-        throw new Error(result.error ?? "Could not submit.");
-      }
-
-      setSubmissionState("success");
-      setSubmissionMessage("You're on the list.");
-      setEmail("");
-    } catch (error) {
-      setSubmissionState("error");
-      setSubmissionMessage(
-        error instanceof Error ? error.message : "Could not submit.",
-      );
-    }
-  }
 
   return (
     <div className="min-h-screen af-page-bg transition-colors duration-300">
@@ -123,8 +80,8 @@ export function AxiusflowLandingPage() {
             <Link href="/contact" className="rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
               Contact
             </Link>
-            <Link href="/#waitlist" className="rounded-[8px] px-4 py-1.5 text-[15px] font-medium af-header-cta transition-colors">
-              Join Waitlist
+            <Link href="https://app.axiusflow.com/login" className="rounded-[8px] px-4 py-1.5 text-[15px] font-medium af-header-cta transition-colors">
+              Login
             </Link>
           </div>
 
@@ -199,11 +156,11 @@ export function AxiusflowLandingPage() {
                     Contact
                   </Link>
                   <Link 
-                    href="/#waitlist"
+                    href="https://app.axiusflow.com/login"
                     className="mt-2 rounded-[8px] px-4 py-2.5 text-center text-[15px] font-medium af-header-cta transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Join Waitlist
+                    Login
                   </Link>
                 </div>
               </nav>
@@ -241,47 +198,16 @@ export function AxiusflowLandingPage() {
                 Axiusflow combines live crypto charting, trade journaling, broker imports, replay, and AI-powered session reviews so active traders can improve without stitching together five tools.
               </p>
 
-              {/* Waitlist form */}
+              {/* Production CTA */}
               <div className="mt-8 flex justify-center">
-                <form
-                  id="waitlist"
-                  onSubmit={submitWaitlist}
-                  className="mx-auto flex w-full max-w-[520px] flex-col gap-3 sm:flex-row"
+                <Link
+                  href="https://app.axiusflow.com/login"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-neutral-950 px-7 text-[15px] font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
                 >
-                  <label htmlFor="waitlist-email" className="sr-only">
-                    Email address
-                  </label>
-                  <input
-                    id="waitlist-email"
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                    placeholder="you@example.com"
-                    className="min-h-12 flex-1 rounded-full border border-gray-200/90 bg-white/90 px-5 text-[15px] text-neutral-950 outline-none transition-colors placeholder:text-neutral-400 focus:border-neutral-400 dark:border-white/10 dark:bg-white/7 dark:text-white dark:placeholder:text-white/35 dark:focus:border-white/35"
-                  />
-                  <button
-                    type="submit"
-                    disabled={submissionState === "submitting"}
-                    className="inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-full bg-neutral-950 px-6 text-[15px] font-medium text-white transition-colors hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
-                  >
-                    {submissionState === "submitting" ? "Submitting" : "Join"}
-                    <HugeiconsIcon icon={ArrowRight01Icon} className="h-4 w-4" />
-                  </button>
-                </form>
+                  Login to Axiusflow
+                  <HugeiconsIcon icon={ArrowRight01Icon} className="h-4 w-4" />
+                </Link>
               </div>
-              {submissionMessage ? (
-                <p
-                  className={`mt-3 text-[14px] ${
-                    submissionState === "error"
-                      ? "text-red-600 dark:text-red-400"
-                      : "af-text-secondary"
-                  }`}
-                  role="status"
-                >
-                  {submissionMessage}
-                </p>
-              ) : null}
             </div>
 
             {/* Hero Image */}

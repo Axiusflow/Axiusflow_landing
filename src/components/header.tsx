@@ -204,8 +204,8 @@ export function Header({ variant = "full", showGetStarted = true }: HeaderProps)
             Contact
           </Link>
           {showGetStarted && (
-            <Link href="/#waitlist" className="rounded-[8px] px-4 py-1.5 text-[15px] font-medium af-header-cta transition-colors">
-              Join Waitlist
+            <Link href="https://app.axiusflow.com/login" className="rounded-[8px] px-4 py-1.5 text-[15px] font-medium af-header-cta transition-colors">
+              Login
             </Link>
           )}
         </div>
@@ -282,11 +282,11 @@ export function Header({ variant = "full", showGetStarted = true }: HeaderProps)
                 </Link>
                 {showGetStarted && (
                   <Link 
-                    href="/#waitlist"
+                    href="https://app.axiusflow.com/login"
                     className="mt-2 rounded-[8px] px-4 py-2.5 text-center text-[15px] font-medium af-header-cta transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Join Waitlist
+                    Login
                   </Link>
                 )}
               </div>

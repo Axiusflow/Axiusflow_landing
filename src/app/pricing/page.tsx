@@ -8,9 +8,9 @@ import { Component as Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
 const plans = [
-  { name: "Basic", cta: "Join waitlist", ctaLink: "/#waitlist", highlight: false },
-  { name: "Pro", cta: "Join waitlist", ctaLink: "/#waitlist", highlight: true },
-  { name: "Premium", cta: "Join waitlist", ctaLink: "/#waitlist", highlight: false },
+  { name: "Basic", cta: "Login", ctaLink: "https://app.axiusflow.com/login", highlight: false },
+  { name: "Pro", cta: "Login", ctaLink: "https://app.axiusflow.com/login", highlight: true },
+  { name: "Premium", cta: "Login", ctaLink: "https://app.axiusflow.com/login", highlight: false },
   { name: "Enterprise", cta: "Talk to us", ctaLink: "/contact", highlight: false },
 ];
 
@@ -189,14 +189,14 @@ export default function PricingPage() {
             Ready to elevate your trading?
           </h2>
           <p className="af-text-secondary mb-8">
-            Join the launch waitlist and we will map your charting, journaling, replay, and import workflow before you choose a plan.
+            Login to Axiusflow to start using the platform, or contact sales if you need help mapping a team workflow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/#waitlist"
+              href="https://app.axiusflow.com/login"
               className="af-hero-cta px-8 py-3 rounded-full font-medium text-sm transition-colors"
             >
-              Join Waitlist
+              Login
             </Link>
             <Link
               href="/contact"
