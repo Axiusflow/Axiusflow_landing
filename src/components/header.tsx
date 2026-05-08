@@ -46,7 +46,7 @@ export function Header({ showGetStarted = true }: HeaderProps) {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-2 md:flex">
+          <nav className="hidden items-center gap-2 md:flex" aria-label="Primary">
             <Link href="/pricing" className="rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
               Pricing
             </Link>
@@ -55,6 +55,9 @@ export function Header({ showGetStarted = true }: HeaderProps) {
             </Link>
             <Link href="/story" className="rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
               Story
+            </Link>
+            <Link href="/vs/tradezella" className="rounded-[8px] px-3 py-2 text-[15px] font-medium af-text-primary transition-colors af-nav-hover">
+              vs Tradezella
             </Link>
           </nav>
         </div>
@@ -138,12 +141,19 @@ export function Header({ showGetStarted = true }: HeaderProps) {
                 >
                   Changelog
                 </Link>
-                <Link 
-                  href="/story" 
+                <Link
+                  href="/story"
                   className="rounded-[8px] px-3 py-2.5 text-[15px] font-medium af-text-primary transition-colors af-nav-hover"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Story
+                </Link>
+                <Link
+                  href="/vs/tradezella"
+                  className="rounded-[8px] px-3 py-2.5 text-[15px] font-medium af-text-primary transition-colors af-nav-hover"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  vs Tradezella
                 </Link>
                 <div className="my-2 border-t border-gray-200/50 dark:border-white/10" />
                 <Link 

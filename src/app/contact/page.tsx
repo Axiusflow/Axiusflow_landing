@@ -8,18 +8,18 @@ import { Component as Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
 const benefits = [
-  "Map your broker, import, and journal workflow into Axiusflow",
-  "Get a focused demo of journaling, replay, analytics, and AI review",
+  "Map your broker, import, and journal workflow into Axiusflow Pro",
+  "Get a focused walkthrough of personalized AI, imports, and analytics",
   "Discuss supported trade imports and broker auto sync priorities",
   "Request integrations that match your active trading workflow",
-  "Plan data, privacy, and analytics needs before launch access",
+  "Plan data, privacy, and analytics needs before subscribing",
 ];
 
 const stats = [
-  { value: "Sync", label: "supported broker workflows built for cleaner review data" },
+  { value: "AI", label: "personalized review trained on your own trading history" },
+  { value: "Sync", label: "supported broker workflows for cleaner review data" },
   { value: "CSV", label: "trade import workflows for journal analytics" },
-  { value: "AI", label: "post-session review for decisions, risk, and behavior" },
-  { value: "Replay", label: "execution context connected to entries, exits, and notes" },
+  { value: "UI", label: "premium, modern workspace built for serious traders" },
 ];
 
 const companySizes = [
@@ -46,11 +46,10 @@ export default function ContactPage() {
             {/* Left Column */}
             <div>
               <h1 className="font-display text-[clamp(36px,5vw,48px)] font-semibold leading-[1.1] tracking-[-0.02em] af-text-primary mb-6">
-                Contact Sales
+                Contact the Axiusflow Team
               </h1>
               <p className="text-[17px] leading-[1.7] af-text-secondary mb-8">
-                Request a demo, or tell us which journaling, broker import,
-                auto sync, and replay workflow you want Axiusflow to support first.
+                Tell us about your journaling, broker import, and AI review workflow — and which integrations you want Axiusflow to prioritize next.
               </p>
 
               {/* Benefits List */}
@@ -80,7 +79,7 @@ export default function ContactPage() {
 
               {/* Stats Section */}
               <h2 className="font-display text-2xl font-semibold af-text-primary mb-8">
-                Build a Better Trading Review Workflow
+                Build a Smarter Trading Review Workflow
               </h2>
 
               <div className="grid grid-cols-2 gap-8">

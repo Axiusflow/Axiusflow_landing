@@ -58,10 +58,10 @@ export default function TermsPage() {
                 2. Description of Services
               </h2>
               <p className="text-[15px] leading-[1.8] af-text-secondary">
-                Axiusflow provides a cloud-based trading journal service that includes trade review tools, 
-                broker connectivity, imports, analytics, replay features, and related services. Our Services are 
-                designed to help traders review performance and manage trading records. Axiusflow is not a 
-                charting platform, brokerage, or trade execution venue.
+                Axiusflow provides a cloud-based trading journal service that includes trade review tools,
+                broker connectivity, imports, premium analytics, personalized AI review, and related services.
+                Our Services are designed to help traders review performance and manage trading records.
+                Axiusflow is not a charting platform, brokerage, or trade execution venue.
               </p>
               <p className="mt-4 text-[15px] leading-[1.8] af-text-secondary">
                 <strong className="af-text-primary font-medium">Important:</strong> Axiusflow does not provide 

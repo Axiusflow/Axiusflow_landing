@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import { siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Axiusflow Pricing: Free and Pro Trading Journal Plans",
+  title: "Trading Journal Pricing — Axiusflow Pro at $20/Month",
   description:
-    "Compare Axiusflow Free and Pro plans. Start free or upgrade to Pro for $20/month to unlock the full trading journal, imports, analytics, and workspace.",
+    "Axiusflow Pro is one premium trading journal plan at $20/month or $192/year. Personalized AI, broker imports, supported auto sync, and analytics in a modern workspace.",
   alternates: {
     canonical: `${siteUrl}/pricing`,
+  },
+  openGraph: {
+    title: "Axiusflow Pricing — One Pro Plan at $20/Month",
+    description:
+      "One serious plan. Personalized AI trading journal with broker imports, supported auto sync, and premium analytics for $20/month or $192/year.",
+    url: `${siteUrl}/pricing`,
   },
 };
 

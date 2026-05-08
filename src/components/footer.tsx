@@ -1092,10 +1092,10 @@ export const siteConfig = {
         <path d="M2.37845 10.5993L2.57045 10.4893L6.88445 12.9533C7.22435 13.1474 7.60901 13.2496 8.00045 13.2496C8.39189 13.2496 8.77656 13.1474 9.11645 12.9533L13.4305 10.4883L13.6225 10.5983C13.7374 10.6638 13.833 10.7586 13.8994 10.8731C13.9659 10.9875 14.0009 11.1175 14.0009 11.2498C14.0009 11.3821 13.9659 11.5121 13.8994 11.6265C13.833 11.7409 13.7374 11.8357 13.6225 11.9013L8.37245 14.9013C8.25915 14.966 8.13093 15 8.00045 15C7.86997 15 7.74175 14.966 7.62845 14.9013L2.37845 11.9013C2.2635 11.8357 2.16795 11.7409 2.10148 11.6265C2.03501 11.5121 2 11.3821 2 11.2498C2 11.1175 2.03501 10.9875 2.10148 10.8731C2.16795 10.7586 2.2635 10.6638 2.37845 10.5983V10.5993Z" />
       </svg>
     ),
-    badge: "Trading journal, replay, and AI review",
-    title: "Axiusflow trading OS",
+    badge: "Trading journal with personalized AI",
+    title: "Axiusflow",
     description:
-      "A trading journal workspace for broker imports, supported auto sync, replay, AI reviews, and performance analytics.",
+      "A modern trading journal workspace with personalized AI, broker imports, supported auto sync, and premium analytics for active traders.",
     cta: {
       primary: {
         text: "Login",
@@ -1109,29 +1109,54 @@ export const siteConfig = {
   },
   footerLinks: [
     {
+      title: "Product",
+      links: [
+        { id: 1, title: "Pricing", url: "/pricing" },
+        { id: 2, title: "Changelog", url: "/changelog" },
+        { id: 3, title: "Security", url: "/security" },
+        { id: 4, title: "vs Tradezella", url: "/vs/tradezella" },
+      ],
+    },
+    {
+      title: "For Traders",
+      links: [
+        { id: 21, title: "Day Traders", url: "/for/day-traders" },
+        { id: 22, title: "Futures Traders", url: "/for/futures-traders" },
+        { id: 23, title: "Prop Firm Traders", url: "/for/prop-firm-traders" },
+      ],
+    },
+    {
+      title: "Integrations",
+      links: [
+        { id: 31, title: "Interactive Brokers", url: "/integrations/interactive-brokers" },
+        { id: 32, title: "NinjaTrader", url: "/integrations/ninjatrader" },
+        { id: 33, title: "TradeStation", url: "/integrations/tradestation" },
+        { id: 34, title: "Webull", url: "/integrations/webull" },
+        { id: 35, title: "Coinbase", url: "/integrations/coinbase" },
+      ],
+    },
+    {
       title: "Company",
       links: [
-        { id: 1, title: "Story", url: "/story" },
-        { id: 2, title: "Contact", url: "/contact" },
-        { id: 3, title: "Pricing", url: "/pricing" },
-        { id: 4, title: "Changelog", url: "/changelog" },
+        { id: 41, title: "Story", url: "/story" },
+        { id: 42, title: "Contact", url: "/contact" },
       ],
     },
     {
       title: "Social",
       links: [
-        { id: 5, title: "Twitter", url: "https://twitter.com/axiusflow" },
-        { id: 6, title: "Instagram", url: "https://instagram.com/axiusflow" },
-        { id: 7, title: "Discord", url: "https://discord.gg/tDFDrKgKJm" },
+        { id: 51, title: "Twitter", url: "https://twitter.com/axiusflow" },
+        { id: 52, title: "LinkedIn", url: "https://www.linkedin.com/company/axiusflow" },
+        { id: 53, title: "Discord", url: "https://discord.gg/tDFDrKgKJm" },
       ],
     },
     {
       title: "Legal",
       links: [
-        { id: 9, title: "Terms", url: "/terms" },
-        { id: 10, title: "Privacy", url: "/privacy" },
-        { id: 11, title: "Cookies", url: "/cookies" },
-        { id: 12, title: "Disclaimer", url: "/disclaimer" },
+        { id: 61, title: "Terms", url: "/terms" },
+        { id: 62, title: "Privacy", url: "/privacy" },
+        { id: 63, title: "Cookies", url: "/cookies" },
+        { id: 64, title: "Disclaimer", url: "/disclaimer" },
       ],
     },
   ],
@@ -1187,7 +1212,7 @@ export const Component = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-background z-10 from-40%" />
         <div className="absolute inset-0 mx-6">
           <FlickeringGrid
-            text={tablet ? "Axiusflow" : "Review every trade"}
+            text={tablet ? "Axiusflow" : "Smart Trading Journal"}
             fontSize={tablet ? 70 : 90}
             className="h-full w-full"
             squareSize={2}

@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import { siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Our Story: Building Axiusflow",
+  title: "Our Story — Building a Modern Trading Journal with Personalized AI",
   description:
-    "Read why Axiusflow is building a focused trading journal for active traders with broker imports, supported auto sync, replay, AI review, and honest product expansion.",
+    "How Axiusflow is being built — a premium trading journal with personalized AI, broker imports, and a calm, modern workspace for active traders.",
   alternates: {
     canonical: `${siteUrl}/story`,
+  },
+  openGraph: {
+    title: "Our Story — Building Axiusflow",
+    description:
+      "A solo founder's journey to build the modern trading journal active traders deserve, with personalized AI and a premium workspace.",
+    url: `${siteUrl}/story`,
   },
 };
 

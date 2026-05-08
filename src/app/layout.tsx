@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -20,6 +20,15 @@ const inter = Inter({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
@@ -29,12 +38,12 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: seoKeywords,
-  authors: [{ name: "Axiusflow Team", url: siteUrl }],
+  authors: [{ name: "Devraj", url: `${siteUrl}/story` }],
   creator: siteName,
   publisher: siteName,
   category: "finance",
   alternates: {
-    canonical: "/",
+    canonical: siteUrl,
   },
   formatDetection: {
     email: false,
@@ -42,7 +51,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Axiusflow - Trading Journal, Replay & AI Review Platform",
+    title: "Axiusflow — Smart Trading Journal with Personalized AI",
     description: siteDescription,
     url: siteUrl,
     siteName,
@@ -51,7 +60,7 @@ export const metadata: Metadata = {
         url: ogImageUrl,
         width: ogImageWidth,
         height: ogImageHeight,
-            alt: "Axiusflow trading journal, broker sync, replay, and AI review workspace",
+        alt: "Axiusflow trading journal with personalized AI, broker imports, and premium analytics workspace",
       },
     ],
     locale: "en_US",
@@ -59,9 +68,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Axiusflow - Trading Journal, Replay & AI Review Platform",
+    title: "Axiusflow — Smart Trading Journal with Personalized AI",
     description: siteDescription,
     images: [ogImageUrl],
+    creator: "@axiusflow",
+    site: "@axiusflow",
   },
   robots: {
     index: true,
@@ -75,10 +86,13 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logo_transparent.svg",
+    icon: [
+      { url: "/logo_transparent.svg", type: "image/svg+xml" },
+    ],
     shortcut: "/logo_transparent.svg",
     apple: "/logo_transparent.svg",
   },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({

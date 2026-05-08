@@ -300,29 +300,29 @@ export function BentoDemo() {
       {/* Row 1: 3 equal cards */}
       <BentoCard
         title="Broker Imports & Auto Sync"
-        description="Bring CSV imports and supported broker sync workflows into one journal while coverage expands deliberately."
+        description="Bring CSV imports and supported broker sync workflows into one premium journal while coverage expands deliberately."
       >
         <IntegrationsVisual />
       </BentoCard>
 
       <BentoCard
-        title="Review Period Snapshots"
-        description="Compare weekly, monthly, and quarterly review patterns without leaving your journal workflow."
+        title="Premium Performance Snapshots"
+        description="Compare weekly, monthly, and quarterly performance inside a calm, modern dashboard built for review."
       >
         <CalendarVisual />
       </BentoCard>
 
       <BentoCard
         title="Market Session Context"
-        description="Review trades with the session, timezone, and market context that shaped each decision."
+        description="Every trade carries its session, timezone, and market context — so the AI knows what shaped each decision."
       >
         <TimezoneVisual />
       </BentoCard>
 
-      {/* Row 2: 2 cards (wider left, narrower right) */}
+      {/* Row 2 */}
       <BentoCard
-        title="Review Reminders"
-        description="Set reminders to revisit trades, add notes, and close the loop on your post-session review."
+        title="Personalized AI Review Prompts"
+        description="Axiusflow's AI studies your tags, notes, and behavior to surface personalized prompts and recurring mistakes."
         className="lg:col-span-2"
       >
         <RemindersVisual />
@@ -330,7 +330,7 @@ export function BentoDemo() {
 
       <BentoCard
         title="Multi-Source Journal"
-        description="Unify crypto, CSV, manual, and future broker-sync trade history in one review surface."
+        description="Unify crypto, CSV, manual, and supported broker-sync trade history inside one premium review workspace."
       >
         <TeamMembersVisual />
       </BentoCard>
@@ -338,21 +338,21 @@ export function BentoDemo() {
       {/* Row 3: 3 equal cards */}
       <BentoCard
         title="Trade Review Playbooks"
-        description="Tag entries, exits, risk decisions, and mistakes so every replay becomes searchable."
+        description="Tag entries, exits, risk decisions, and mistakes so the AI can find repeatable patterns across your trades."
       >
         <GroupBookingVisual />
       </BentoCard>
 
       <BentoCard
-        title="Journal Filters"
-        description="Slice your review workflow by setup, hold time, session, or any tag that fits your process."
+        title="Premium Journal Filters"
+        description="Slice your review by setup, hold time, session, instrument, or any custom tag that fits your trading process."
       >
         <DurationVisual />
       </BentoCard>
 
       <BentoCard
         title="Market Sessions & Hours"
-        description="Automatic detection of pre-market, regular hours, and after-hours trading sessions."
+        description="Automatic detection of pre-market, regular hours, and after-hours trading sessions for sharper review context."
       >
         <BlockDatesVisual />
       </BentoCard>

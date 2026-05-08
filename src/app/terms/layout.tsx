@@ -4,7 +4,7 @@ import { siteUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Read the Axiusflow Terms of Service for using the trading journal, broker import, auto sync, replay, analytics, and AI review workspace.",
+    "Read the Axiusflow Terms of Service for using the trading journal, broker imports, supported auto sync, premium analytics, and personalized AI review workspace.",
   alternates: {
     canonical: `${siteUrl}/terms`,
   },

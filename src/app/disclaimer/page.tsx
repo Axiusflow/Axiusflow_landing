@@ -99,7 +99,7 @@ export default function DisclaimerPage() {
               </h2>
               <p className="text-[15px] leading-[1.8] af-text-secondary">
                 We make no guarantees regarding the accuracy, completeness, or timeliness of any information 
-                provided through our Services. Imported trade records, replay views, and analytics are provided for informational 
+                provided through our Services. Imported trade records, AI-generated reviews, and analytics are provided for informational
                 purposes only and should not be relied upon as the sole basis for making trading decisions.
               </p>
             </section>

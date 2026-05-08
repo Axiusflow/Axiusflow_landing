@@ -25,7 +25,7 @@ export function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="mx-auto mt-4 max-w-[540px] text-[15px] leading-[1.6] af-text-secondary">
-            Answers for traders comparing journaling, broker sync, replay, AI review, and analytics workflows.
+            Answers for traders comparing journaling, broker sync, personalized AI, and analytics workflows.
           </p>
         </div>
 
