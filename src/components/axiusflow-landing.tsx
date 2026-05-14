@@ -214,15 +214,16 @@ export function AxiusflowLandingPage() {
                 The Smart Trading Journal with Personalized AI
               </h1>
 
-              <p className="mx-auto mt-6 max-w-[680px] text-[17px] leading-[1.65] af-text-secondary transition-colors sm:text-[18px]">
-                Axiusflow is a premium trading journal built for active traders. Personalized AI learns from your trades, broker imports keep your history clean, and a modern workspace turns every session into a sharper review.
+              <p className="mx-auto mt-6 max-w-[520px] text-[16px] leading-[1.6] af-text-secondary transition-colors">
+                AI that learns from your trades. Clean broker imports. A workspace built for serious review.
               </p>
 
               {/* Primary CTA + secondary */}
               <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Link
                   href="https://app.axiusflow.com/pricing?checkout=pro"
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-neutral-950 px-7 text-[15px] font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 text-[15px] font-medium text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundImage: "linear-gradient(135deg, var(--brand-gradient-start), var(--brand-gradient-middle), var(--brand-gradient-end))" }}
                 >
                   Get Axiusflow Pro
                   <HugeiconsIcon icon={ArrowRight01Icon} className="h-4 w-4" />
@@ -393,7 +394,8 @@ export function AxiusflowLandingPage() {
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
                 href="https://app.axiusflow.com/pricing?checkout=pro"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-neutral-950 px-7 text-[15px] font-medium text-white transition-colors hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 text-[15px] font-medium text-white transition-opacity hover:opacity-90"
+                style={{ backgroundImage: "linear-gradient(135deg, var(--brand-gradient-start), var(--brand-gradient-middle), var(--brand-gradient-end))" }}
               >
                 Get Axiusflow Pro
                 <HugeiconsIcon icon={ArrowRight01Icon} className="h-4 w-4" />

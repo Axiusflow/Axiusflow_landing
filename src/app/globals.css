@@ -19,6 +19,9 @@
   --token-header-cta-bg-hover: #000000;
   --token-header-cta-text: #ffffff;
   --token-hero-cta-text: #333333;
+  --brand-gradient-start: oklch(0.639 0.191 289.189);
+  --brand-gradient-middle: oklch(0.727 0.198 352.257);
+  --brand-gradient-end: oklch(0.92 0.098 91.736);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

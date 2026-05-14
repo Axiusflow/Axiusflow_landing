@@ -166,106 +166,124 @@ export default function PricingPage() {
 
       <Header />
 
-      <section className="pt-16 pb-10 px-6">
-        <div className="max-w-[860px] mx-auto text-center">
-          <div className="text-[#0ea5e9] text-xs font-semibold tracking-[0.24em] uppercase mb-4">
-            Axiusflow Pricing
-          </div>
-          <h1 className="font-display text-4xl md:text-5xl font-semibold af-text-primary mb-4 tracking-[-0.02em]">
-            Trading Journal Pricing — One Pro Plan
+      <section className="pt-20 pb-4 px-6">
+        <div className="max-w-[640px] mx-auto text-center">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-border af-surface-bg px-3 py-1 text-[12px] font-medium af-text-secondary">
+            Pricing
+          </span>
+          <h1 className="mt-4 font-display text-[clamp(32px,4vw,48px)] font-semibold leading-[1.1] tracking-[-0.02em] af-text-primary">
+            One plan. Everything included.
           </h1>
-          <p className="af-text-secondary text-lg max-w-2xl mx-auto leading-[1.6]">
-            Axiusflow Pro is the full premium workspace: personalized AI, broker imports, supported auto sync, and analytics. One plan. No free tier.
+          <p className="mt-3 text-[15px] leading-[1.6] af-text-secondary max-w-md mx-auto">
+            Axiusflow Pro is the full premium workspace. No tiers, no limits.
           </p>
         </div>
       </section>
 
-      {/* Billing toggle */}
-      <section className="px-6 pb-2">
-        <div className="max-w-[420px] mx-auto flex justify-center">
-          <div className="inline-flex rounded-full border border-[#ededed] bg-white/70 p-1 dark:border-[#171717] dark:bg-white/[0.04]">
-            {([
-              { key: "monthly", label: "Monthly" },
-              { key: "yearly", label: "Yearly · Save 20%" },
-            ] as const).map((option) => {
-              const isActive = billingPeriod === option.key;
-              return (
-                <button
-                  key={option.key}
-                  type="button"
-                  onClick={() => setBillingPeriod(option.key)}
-                  className={`cursor-pointer rounded-full px-5 py-2 text-sm font-medium transition-colors ${
-                    isActive
-                      ? "bg-[#0ea5e9] text-white"
-                      : "af-text-secondary hover:af-text-primary"
-                  }`}
-                  aria-pressed={isActive}
-                >
-                  {option.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Single Pro card */}
-      <section className="px-6 pt-10 pb-16">
-        <div className="max-w-[640px] mx-auto">
-          <div className="relative rounded-3xl border border-[#ededed] dark:border-[#171717] bg-white/80 dark:bg-white/[0.03] p-8 lg:p-10 shadow-[0_1px_0_0_rgba(0,0,0,0.02)]">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0ea5e9] px-3 py-1 text-[12px] font-semibold text-white shadow-sm">
-                Axiusflow Pro
-              </span>
-            </div>
+      <section className="px-6 pt-8 pb-20">
+        <div className="max-w-[560px] mx-auto relative">
+          {/* Ambient glow behind card */}
+          <div
+            className="absolute -top-24 left-1/2 -translate-x-1/2 h-[320px] w-[320px] rounded-full opacity-40 blur-[80px] pointer-events-none"
+            style={{ background: "radial-gradient(circle, rgba(199,241,252,0.5) 0%, transparent 70%)" }}
+          />
 
-            <div className="text-center">
-              <h2 className="font-display text-[22px] font-semibold af-text-primary">
-                Axiusflow Pro
-              </h2>
-              <p className="mt-2 text-[14px] af-text-secondary">
-                The full premium trading journal with personalized AI.
-              </p>
-
-              <div className="mt-6 flex items-baseline justify-center gap-1">
-                <span className="font-display text-[56px] font-semibold leading-none af-text-primary">
-                  {displayedPrice}
+          <div className="relative rounded-[28px] border border-border af-surface-bg p-1">
+            {/* Inner highlight line */}
+            <div className="rounded-[24px] border border-white/[0.06] bg-white/[0.02] p-8 lg:p-10 dark:border-white/[0.04]">
+              {/* Badge */}
+              <div className="flex justify-center">
+                <span
+                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[12px] font-semibold text-white"
+                  style={{
+                    backgroundImage: "linear-gradient(135deg, var(--brand-gradient-start), var(--brand-gradient-middle), var(--brand-gradient-end))",
+                  }}
+                >
+                  Axiusflow Pro
                 </span>
-                <span className="text-[16px] font-medium af-text-secondary">{displayedSuffix}</span>
               </div>
-              <p className="mt-2 text-[13px] af-text-secondary">{displayedSubcopy}</p>
 
+              {/* Billing toggle */}
+              <div className="mt-6 flex justify-center">
+                <div className="inline-flex rounded-full border border-border p-[3px] af-surface-muted-bg">
+                  {([
+                    { key: "monthly", label: "Monthly" },
+                    { key: "yearly", label: "Yearly" },
+                  ] as const).map((option) => {
+                    const isActive = billingPeriod === option.key;
+                    return (
+                      <button
+                        key={option.key}
+                        type="button"
+                        onClick={() => setBillingPeriod(option.key)}
+                        className={`cursor-pointer relative rounded-full px-4 py-1.5 text-[13px] font-medium transition-all ${
+                          isActive
+                            ? "af-text-primary shadow-[0_1px_2px_rgba(0,0,0,0.06)]"
+                            : "af-text-secondary hover:af-text-primary"
+                        }`}
+                        style={isActive ? { background: "var(--token-surface)" } : undefined}
+                        aria-pressed={isActive}
+                      >
+                        {option.label}
+                        {option.key === "yearly" && (
+                          <span className="ml-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                            -20%
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Price */}
+              <div className="mt-8 text-center">
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="font-display text-[64px] font-semibold leading-none tracking-[-0.03em] af-text-primary">
+                    {displayedPrice}
+                  </span>
+                  <span className="text-[17px] font-medium af-text-secondary">{displayedSuffix}</span>
+                </div>
+                <p className="mt-1.5 text-[13px] af-text-secondary">{displayedSubcopy}</p>
+              </div>
+
+              {/* CTA */}
               <Link
                 href={proCheckoutUrl}
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0ea5e9] px-6 py-3 text-[15px] font-medium text-white transition-colors hover:bg-[#0284c7]"
+                className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full af-header-cta px-6 py-3 text-[15px] font-medium transition-colors hover:opacity-90"
               >
                 Get Axiusflow Pro
                 <HugeiconsIcon icon={ArrowRight01Icon} className="h-4 w-4" />
               </Link>
-              <p className="mt-3 text-[12px] af-text-secondary">
+              <p className="mt-2.5 text-center text-[12px] af-text-secondary">
                 Cancel anytime. Existing subscribers keep their price.
               </p>
-            </div>
 
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
-              {includedFeatures.map((group) => (
-                <div key={group.category}>
-                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] af-text-secondary">
-                    {group.category}
-                  </p>
-                  <ul className="mt-3 space-y-2">
-                    {group.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-[14px] leading-[1.55] af-text-primary">
-                        <HugeiconsIcon
-                          icon={Tick02Icon}
-                          className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-600 dark:text-emerald-400"
-                        />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              {/* Divider */}
+              <div className="my-8 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+              {/* Features */}
+              <div className="grid gap-5 sm:grid-cols-2">
+                {includedFeatures.map((group) => (
+                  <div key={group.category}>
+                    <p className="text-[12px] font-semibold uppercase tracking-[0.12em] af-text-secondary">
+                      {group.category}
+                    </p>
+                    <ul className="mt-2.5 space-y-1.5">
+                      {group.items.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-[13px] leading-[1.55] af-text-primary">
+                          <HugeiconsIcon
+                            icon={Tick02Icon}
+                            className="mt-[3px] h-3.5 w-3.5 flex-shrink-0 text-[var(--token-text-secondary)] opacity-70"
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
